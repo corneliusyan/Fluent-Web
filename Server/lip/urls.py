@@ -4,9 +4,8 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
-# router.register(r'users',views.UserViewSet)
-# router.register(r'todos',views.TodoViewSet)
-# router.register(r'fcmtoken',views.FCMTokenViewSet)
+router.register(r'lessons',views.LessonViewSet)
+router.register(r'lectures',views.LectureViewSet)
 
 urlpatterns = [
     path('',include(router.urls)),
