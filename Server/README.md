@@ -1,5 +1,3 @@
-## Test server at https://lipserver.herokuapp.com
-
 # Installation
 
 ## First time run
@@ -13,12 +11,6 @@ python manage.py migrate
 ```
 pipenv shell
 python manage.py runserver
-```
-
-## Testing
-```
-pipenv shell
-python manage.py test
 ```
 
 # Database Management
