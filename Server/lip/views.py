@@ -12,7 +12,7 @@ from lip.serializers import LessonSerializer, LectureSerializer
 from django.core.exceptions import ObjectDoesNotExist
 from rest_framework import status
 from django.core import serializers
-import json
+from lip.analyze import analyze
 
 
 class LessonViewSet(viewsets.ModelViewSet):
@@ -23,7 +23,8 @@ class LessonViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
         serialized_data = LessonSerializer(instance=instance).data
         lesson_number = serialized_data['lesson_number']
-        res = [LectureSerializer(instance=lecture).data for lecture in Lecture.objects.filter(lesson_number=lesson_number)]
+        res = [LectureSerializer(instance=lecture).data for lecture in Lecture.objects.filter(
+            lesson_number=lesson_number)]
         return Response(res)
 
 
@@ -32,5 +33,10 @@ class LectureViewSet(viewsets.ModelViewSet):
     serializer_class = LectureSerializer
 
 
-# TODO : get lecture list by lesson number, Compare algorithm (string,lecture_id -> result),
-#        write out loud (text,text -> result)
+class Analyze(APIView):
+    def post(self, request, format='json'):
+        input = request.data['input_text']
+        source = request.data['source_text']
+        time = request.data['input_time']
+        expected_time = request.data['expected_time']
+        return Response(analyze(input,source,time,expected_time))
