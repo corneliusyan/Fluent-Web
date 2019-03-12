@@ -38,5 +38,5 @@ class Analyze(APIView):
         input = request.data['input_text']
         source = request.data['source_text']
         time = request.data['input_time']
-        expected_time = request.data['expected_time']
-        return Response(analyze(input,source,time,expected_time))
+        expected_time = request.data['expected_time'] if 'expected_time' in request.data else 0
+        return Response(analyze(input, source, time, expected_time))

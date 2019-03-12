@@ -62,7 +62,7 @@ GET '/lessons/'
 ## Lecture
 ### Get All Lectures from Lesson Number
 ```
-GET '/lessons/<lesson_number>'
+GET '/lessons/<lesson_number>/'
 
 [
     {
@@ -94,4 +94,30 @@ GET '/lessons/<lesson_number>'
         "expected_time": 6
     }
 ]
+```
+
+
+## Analyze
+### Get analysis from input, __expected_time is OPTIONAL__ (*used in __write out loud__ feature*)
+```
+POST '/analyze/'
+{
+    "source_text":"I like ice cream.",
+    "input_text":"I like is krim.",
+    "input_time":7,
+    "expected_time":5
+}
+```
+```
+Response
+{
+    "result": "I like *ice* *cream*.",
+    "wrong_words": [
+        "cream",
+        "ice"
+    ],
+    "clarity": 0.5,
+    "pace": 0.6,
+    "star": 2
+}
 ```
