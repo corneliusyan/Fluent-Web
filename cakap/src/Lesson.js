@@ -1,31 +1,35 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import rocket from './assets/img/rocket.png';
 import ask from './assets/img/ask.png';
 import newsletter from './assets/img/newsletter.png';
  
 class Lesson extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      satu: 1,
+      dua: 2,
+      tiga: 3,
+    };
+  }
+
   render() {
     return (
       <div className="main-container">
         <div className="sidebar">
-            
             <div className="sidebar-container">
                 <h1>Lessons</h1>
-
                 <ul className="sidebar-ul">
                     <li className="sidebar-li"><a href="/" className="sidebar-active">All</a></li>
                     <li className="sidebar-li"><a href="/">Ongoing</a></li>
                     <li className="sidebar-li"><a href="/">Completed</a></li>
                 </ul>
-
             </div>
-
         </div>
 
         <div className="main-column">
-            
             <div className="main-col-container">
-                
                 <div className="card focused">
                     <div className="card-text-container">
                         <h1>Introduction</h1>
@@ -39,7 +43,9 @@ class Lesson extends Component {
 
                     <div className="card-img-container">
                         <img src={rocket} alt="Lesson 1"/>
-                        <button className="start-button">Start</button>
+                        <NavLink to={`/${this.state.satu}`}>
+                          <button className="start-button">Start</button>
+                        </NavLink>
                     </div>
                 </div>
 
@@ -56,7 +62,9 @@ class Lesson extends Component {
 
                     <div className="card-img-container">
                         <img src={ask} alt="Lesson 2"/>
-                        <button className="start-button">Start</button>
+                        <NavLink to={`/${this.state.dua}`}>
+                          <button className="start-button">Start</button>
+                        </NavLink>
                     </div>
                 </div>
 
@@ -73,7 +81,9 @@ class Lesson extends Component {
 
                     <div className="card-img-container">
                         <img src={newsletter} alt="Lesson 3"/>
-                        <button className="start-button">Start</button>
+                        <NavLink to={`/${this.state.tiga}`}>
+                          <button className="start-button">Start</button>
+                        </NavLink>
                     </div>
                 </div>
 

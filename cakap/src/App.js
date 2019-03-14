@@ -9,6 +9,7 @@ import Practice from "./Practice";
 import Speak from "./Speak";
 import Profile from "./Profile";
 import logo from './assets/img/logo2.png';
+import Lecture from './Lecture';
 
 class App extends Component {
   render() {
@@ -29,6 +30,7 @@ class App extends Component {
             <Route path="/practice" component={Practice}/>
             <Route path="/speak" component={Speak}/>
             <Route path="/profile" component={Profile}/>
+            <Route path="/:id" component={Lecture}/>
           </div>
         </div>
       </HashRouter>
