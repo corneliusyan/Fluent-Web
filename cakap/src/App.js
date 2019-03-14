@@ -19,7 +19,8 @@ class App extends Component {
           <div className="navbar">
             <ul className="navbar-ul">
               <li className="navbar-li"><img src={logo} alt="Cakap" className="logo"/></li>
-              <li className="navbar-li"><NavLink to="/">Lessons</NavLink></li>
+              <NavLink to="/"></NavLink>
+              <li className="navbar-li"><NavLink to="/lesson">Lessons</NavLink></li>
               <li className="navbar-li"><NavLink to="/practice">Practice</NavLink></li>
               <li className="navbar-li"><NavLink to="/speak">Speak</NavLink></li>
               <li className="navbar-li"><NavLink to="/profile">Profile</NavLink></li>
@@ -27,10 +28,11 @@ class App extends Component {
           </div>
           <div>
             <Route exact path="/" component={Lesson}/>
+            <Route path="/lesson" component={Lesson}/>
             <Route path="/practice" component={Practice}/>
             <Route path="/speak" component={Speak}/>
             <Route path="/profile" component={Profile}/>
-            <Route path="/:id" component={Lecture}/>
+            {/* <Route path="/:id" component={Lecture}/> */}
           </div>
         </div>
       </HashRouter>

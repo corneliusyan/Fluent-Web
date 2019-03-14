@@ -62,7 +62,7 @@ class Colllapse extends Component {
       <div className="profile-box" style={blockStyle}>
         <div style={{flex:'9', display:'flex'}}>
           <div style={{flex: 1}}><div style={circleStyle}><img style={imgStyle} src={this.props.imgsrc} /></div></div>
-          <h5 style={{flex: 6, marginTop: 8}}>{this.props.text}</h5>
+          <h4 style={{flex: 6, marginTop: 12}}>{this.props.text}</h4>
         </div>
         <div style={{flex:'1'}}>
           <img style={imgStyle} src={arrow} />
@@ -80,7 +80,7 @@ class Box extends Component {
     }
     return(
       <div style={boxStyle}>
-        <h3>{this.props.header}</h3>
+        <h2 style={{marginBottom: 10}}>{this.props.header}</h2>
         {this.props.children}
       </div>
     );

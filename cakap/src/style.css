@@ -13,7 +13,7 @@
     src: url('/assets/fonts/circular_bold.ttf') format('truetype'), 
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
     font-family: 'Circular', Fallback, sans-serif;
     color: #1f3149;
     margin-block-start: 5px;
@@ -44,6 +44,7 @@ html, body {
     margin: 0;
     height: 100%;
     width: 100%;
+    background-color: #f1f1f1;
 }
 
 .main-container {
@@ -130,6 +131,8 @@ html, body {
     z-index: 2;
     top: 0; /* Position the navbar at the top of the page */
     width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
@@ -144,8 +147,6 @@ html, body {
     padding: 0;
     overflow: hidden;
     background-color: #ffffff;
-    padding-left: 15vw;
-    padding-right: 15vw;
 }
 
 .navbar-li {
@@ -276,7 +277,7 @@ html, body {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 5px;
-    margin: 5px;
+    margin-bottom: 10px;
     padding: 5px;
 }
 
