@@ -170,7 +170,7 @@ html, body {
     color: #1f3149;
 }
 
-.tab-active {
+.active {
     color: #6a68fa;
 }
 
@@ -272,6 +272,14 @@ html, body {
     bottom: 0;
 }
 
+.profile-box {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+}
+
 /* Small Card */
 
 .card-small {
@@ -322,3 +330,49 @@ html, body {
     line-height: 1.8;
     text-align: justify;
 }
+/* 
+.cart {
+    div , span {
+      font-family: "Times New Roman";
+      font-size: 16px;
+      position: relative;
+      margin-top: -4px;
+    }
+    .price {
+      font-size: 34px;
+    }
+  
+    .vcenter {
+      display: inline-block;
+      float: none;
+      horiz-align :right !important;
+    }
+  
+    .border {
+      border:solid 0.5px;
+    }
+  
+    .leftmargin{
+      margin-left: 10px;
+    }
+  
+    .length
+    {
+      //display: none;
+      width: 100%;
+    }
+  
+    .grey
+    {
+      background-color: darkgray;
+    }
+  
+    .collapse {
+      display: none
+    }
+  
+    .collapse.in {
+      display: block
+    }
+  
+} */

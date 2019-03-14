@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import earth from './assets/img/earth.png';
 import finance from './assets/img/finance.png';
 import food from './assets/img/food.png';
