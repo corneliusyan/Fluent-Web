@@ -9,7 +9,6 @@ import Practice from "./Practice";
 import Speak from "./Speak";
 import Profile from "./Profile";
 import logo from './assets/img/logo2.png';
-import './App.css';
 
 class App extends Component {
   render() {
