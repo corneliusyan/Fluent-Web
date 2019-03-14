@@ -12,14 +12,17 @@ class Lesson(models.Model):
     rating_count = models.IntegerField(default=0)
     students_count = models.IntegerField(default=0)
     lectures_count = models.IntegerField(default=0)
+    desc = models.TextField(default='')
 
     class Meta:
-        ordering = ('number',)
+        ordering = ('lesson_number',)
+
 
 class Lecture(models.Model):
-    lesson_number = models.IntegerField(blank = False)
-    lecture_number = models.IntegerField(blank = False)
+    lesson_number = models.IntegerField(blank=False)
+    lecture_number = models.IntegerField(blank=False)
     text = models.TextField()
+    expected_time = models.IntegerField(blank=False)
 
     class Meta:
-        ordering = ('lesson_number','lecture_number',)
+        ordering = ('lesson_number', 'lecture_number',)
