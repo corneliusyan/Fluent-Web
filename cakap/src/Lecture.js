@@ -5,6 +5,21 @@ import health from './assets/img/health.png';
 import sport from './assets/img/sport.png';
 import hierarchy from './assets/img/hierarchy.png';
  
+class Card extends Component {
+    render(){
+        return(
+            <div className="card-small">
+                <div className="card-small-image-container">
+                    <img src={this.props.imgsrc} className="card-small-image" alt="lecture"/>
+                </div>
+                <div className="card-small-text-container">
+                    <h3>{this.props.header}</h3>
+                </div>
+            </div>
+        );
+    }
+}
+
 class Lecture extends Component {
   render() {
     return (
@@ -30,50 +45,13 @@ class Lecture extends Component {
         <div className="main-column">
             <div className="main-col-container">
                 <div className="row-container">
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={communication} className="card-small-image" alt="lecture"/>
-                        </div>
-                        <div className="card-small-text-container">
-                            <h3>Greetings and General Things</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={health} className="card-small-image" alt="lecture"/>
-                        </div>
-
-                        <div className="card-small-text-container">
-                            <h3>Health, Dating, and Marriage</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
+                    <Card imgsrc={communication} header="Greetings and General Things" />
+                    <Card imgsrc={health} header="Health, Dating, and Marriage" />
                 </div>
 
                 <div className="row-container">
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={sport} className="card-small-image" alt="lecture"/>
-                        </div>
-
-                        <div className="card-small-text-container">
-                            <h3>Guys, Girls, and Sports</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
-
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={hierarchy} className="card-small-image" alt="lecture"/>
-                        </div>
-
-                        <div className="card-small-text-container">
-                            <h3>Family, Children, and Friends</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
+                    <Card imgsrc={sport} header="Guys, Girls, and Sports" />
+                    <Card imgsrc={hierarchy} header="Family, Children, and Friends" />
                 </div>
 
             </div>

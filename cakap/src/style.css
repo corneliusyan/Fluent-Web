@@ -288,7 +288,7 @@ html, body {
     transition: 0.3s;
     border-radius: 5px; /* 5px rounded corners */
     width: 320px;
-    height: 380px;
+    height: 350px;
     background-color: #ffffff;
     margin: 30px;
     display: block;
@@ -310,7 +310,7 @@ html, body {
 
 .card-small-image-container {
     background-color: #6a68fa;
-    height: 66%;
+    height: 75%;
     width: 100%;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -319,6 +319,7 @@ html, body {
 .card-small-text-container {
     height: 40%;
     width: 100%;
+    padding: 10px;
 }
 
 .card-small-text-container h3 {
