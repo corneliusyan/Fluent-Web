@@ -6,6 +6,23 @@ import health from './assets/img/health.png';
 import sport from './assets/img/sport.png';
 import hierarchy from './assets/img/hierarchy.png';
  
+class Card extends Component {
+    render(){
+        return(
+            <NavLink to={`/detail/${this.props.lesson}/${this.props.id}`}>
+                <div className="card-small">
+                    <div className="card-small-image-container">
+                        <img src={this.props.imgsrc} className="card-small-image" alt="lecture"/>
+                    </div>
+                    <div className="card-small-text-container">
+                        <h3>{this.props.header}</h3>
+                    </div>
+                </div>
+            </NavLink>
+        );
+    }
+}
+
 class Lecture extends Component {
   render() {
     return (
@@ -31,60 +48,13 @@ class Lecture extends Component {
         <div className="main-column">
             <div className="main-col-container">
                 <div className="row-container">
-                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/1`}>
-                        <div className="card-small">
-                            <div className="card-small-image-container">
-                                <img src={communication} className="card-small-image" alt="lecture"/>
-                            </div>
-                            <div className="card-small-text-container">
-                                <h3>Greetings and General Things</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </NavLink>
-
-                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/2`}>
-                        <div className="card-small">
-                            <div className="card-small-image-container">
-                                <img src={health} className="card-small-image" alt="lecture"/>
-                            </div>
-
-                            <div className="card-small-text-container">
-                                <h3>Health, Dating, and Marriage</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </NavLink>
-                
+                    <Card imgsrc={communication} header="Lecture 1" id='1' lesson={this.props.match.params.lesson_id}/>
+                    <Card imgsrc={health} header="Lecture 2" id='2' lesson={this.props.match.params.lesson_id}/>
                 </div>
 
                 <div className="row-container">
-                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/3`}>
-                        <div className="card-small">
-                            <div className="card-small-image-container">
-                                <img src={sport} className="card-small-image" alt="lecture"/>
-                            </div>
-
-                            <div className="card-small-text-container">
-                                <h3>Guys, Girls, and Sports</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </NavLink>
-
-                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/4`}>
-                        <div className="card-small">
-                            <div className="card-small-image-container">
-                                <img src={hierarchy} className="card-small-image" alt="lecture"/>
-                            </div>
-
-                            <div className="card-small-text-container">
-                                <h3>Family, Children, and Friends</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </NavLink>
-                
+                    <Card imgsrc={sport} header="Lecture 3" id='3' lesson={this.props.match.params.lesson_id}/>
+                    <Card imgsrc={hierarchy} header="Lecture 4" id='4' lesson={this.props.match.params.lesson_id}/>
                 </div>
 
             </div>

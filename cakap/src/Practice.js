@@ -12,6 +12,21 @@ recognition.continous = true
 recognition.interimResults = true
 recognition.lang = 'en-US'
  
+class Card extends Component {
+    render(){
+        return(
+            <div className="card-small">
+                <div className="card-small-image-container">
+                    <img src={this.props.imgsrc} className="card-small-image" alt="lecture"/>
+                </div>
+                <div className="card-small-text-container">
+                    <h3>{this.props.header}</h3>
+                </div>
+            </div>
+        );
+    }
+}
+
 class Practice extends Component {
 
     constructor() {

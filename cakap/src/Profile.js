@@ -9,36 +9,46 @@ import unlocked from './assets/img/unlocked.png';
 import user from './assets/img/user.png';
 import favorite from './assets/img/favorite.png';
 import start from './assets/img/start.png';
-import arrow from './assets/img/right-arrow.png';
+import rightArrow from './assets/img/right-arrow.png';
+import downArrow from './assets/img/down-arrow.png';
 
-// class Collapse extends React.Component {
-//   constructor() {
-//     super();
-//     // Initial state
-//     this.state = { open: false };
-//   }
-//   toggle() {
-//     this.setState({
-//       open: !this.state.open
-//     });
-//   }
-//   render() {
-//     return (
-//       <div className="cart">
-//        <button className="btn btn-block" onClick={this.toggle.bind(this)}>
-//                             Open/close
-//        </button>
-//         <div id="demo" className={"collapse" + (this.state.open ? ' in' : '')}>
-//               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-//               Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-//         </div>
-//       </div>
-//     );
-//   }
+class ToggleBox extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpened: false,
+      arrows: rightArrow, 
+    };
+    this.toggleBox = this.toggleBox.bind(this);
+  }
 
-// };
+  toggleBox() {
+    this.setState(oldState => ({ isOpened: !oldState.isOpened }));
+    if (this.state.arrows == rightArrow){
+      this.setState({ arrows: downArrow });
+    }else{
+      this.setState({ arrows: rightArrow });
+    }
+  }
 
-class Colllapse extends Component {
+  render() {
+    const { title, children, colsrc } = this.props;
+    const { isOpened } = this.state;
+    return (
+      <div>
+        <div onClick={this.toggleBox}>
+          <Collapse imgsrc={colsrc} text={title} arrow={this.state.arrows}/>
+        </div>
+        {isOpened && children && (
+          <div className="">
+            {children}
+          </div>
+        )}
+      </div>
+    );
+  }
+}
+class Collapse extends Component {
   render(){
     var blockStyle = {
       display:'flex',
@@ -65,7 +75,25 @@ class Colllapse extends Component {
           <h4 style={{flex: 6, marginTop: 12}}>{this.props.text}</h4>
         </div>
         <div style={{flex:'1'}}>
-          <img style={imgStyle} src={arrow} />
+          <img style={imgStyle} src={this.props.arrow} />
+        </div>
+      </div>
+    );
+  }
+}
+
+class Child extends Component {
+  render(){
+    var blockStyle = {
+      backgroundColor: '#f8f8f8',
+      color: 'black',
+      width: 685,
+      paddingLeft: 15,
+    };
+    return(
+      <div className="profile-box" style={blockStyle}>
+        <div>
+          <h5>{this.props.text}</h5>
         </div>
       </div>
     );
@@ -114,15 +142,32 @@ class Profile extends Component {
         <div className="main-column">
             <div className="main-col-container">
               <Box header="General">
-                <Colllapse imgsrc={heart} text="Favorites"/>
-                <Colllapse imgsrc={user} text="Accounts"/>
-                <Colllapse imgsrc={favorite} text="Achievements"/>
+                <ToggleBox title="Favorites" colsrc={heart}>
+                  <Child text="Margareth"/>
+                  <Child text="Bornelius"/>
+                </ToggleBox>
+                <ToggleBox title="Accounts" colsrc={user}>
+                  <Child text="Sign Out"/>
+                </ToggleBox>
+                <ToggleBox title="Achievements" colsrc={favorite}>
+                  <Child text="King of the King"/>
+                  <Child text="High Achiever"/>
+                  <Child text="New Comer"/>
+                </ToggleBox>
               </Box>
               <Box header="Settings">
-                <Colllapse imgsrc={unlocked} text="Edit Login Details"/>
-                <Colllapse imgsrc={tick} text="Update Interests"/>
-                <Colllapse imgsrc={blocked} text="Blocked Users"/>
+                <ToggleBox title="Edit Login Details" colsrc={unlocked}>
+                  <Child text="Name"/>
+                  <Child text="Photo"/>
+                </ToggleBox>
+                <ToggleBox title="Update Interests" colsrc={tick}>
+                  <Child text="Mathematic"/>
+                </ToggleBox>
+                <ToggleBox title="Blocked Users" colsrc={blocked}>
+                  <Child text="Elsie"/>
+                </ToggleBox>
               </Box>
+              
             </div>
         </div>
       </div>
