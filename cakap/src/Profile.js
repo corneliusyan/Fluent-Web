@@ -11,32 +11,69 @@ import favorite from './assets/img/favorite.png';
 import start from './assets/img/start.png';
 import arrow from './assets/img/right-arrow.png';
 
-// class Collapse extends React.Component {
-//   constructor() {
-//     super();
-//     // Initial state
-//     this.state = { open: false };
-//   }
-//   toggle() {
-//     this.setState({
-//       open: !this.state.open
-//     });
-//   }
-//   render() {
-//     return (
-//       <div className="cart">
-//        <button className="btn btn-block" onClick={this.toggle.bind(this)}>
-//                             Open/close
-//        </button>
-//         <div id="demo" className={"collapse" + (this.state.open ? ' in' : '')}>
-//               Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
-//               Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-//         </div>
-//       </div>
-//     );
-//   }
+class ToggleBox extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isOpened: false,
+    };
+    this.toggleBox = this.toggleBox.bind(this);
+  }
 
-// };
+  toggleBox() {
+    this.setState(oldState => ({ isOpened: !oldState.isOpened }));
+  }
+
+  render() {
+    const { title, children, colsrc } = this.props;
+    const { isOpened } = this.state;
+    return (
+      <div>
+        <div onClick={this.toggleBox}>
+          <Collapse imgsrc={colsrc} text={title}/>
+        </div>
+        {isOpened && children && (
+          <div className="">
+            {children}
+          </div>
+        )}
+      </div>
+    );
+  }
+}
+class Collapse extends Component {
+  render(){
+    var blockStyle = {
+      display:'flex',
+      backgroundColor: 'white',
+      color: 'black',
+      width: 700,
+    };
+
+    var imgStyle = {
+      height: 30,
+      margin: 5,
+    };
+
+    var circleStyle = {
+      background: '#6a68fa',
+      width: 40,
+      height: 40,
+      borderRadius: 20,
+    };
+    return(
+      <div className="profile-box" style={blockStyle}>
+        <div style={{flex:'9', display:'flex'}}>
+          <div style={{flex: 1}}><div style={circleStyle}><img style={imgStyle} src={this.props.imgsrc} /></div></div>
+          <h4 style={{flex: 6, marginTop: 12}}>{this.props.text}</h4>
+        </div>
+        <div style={{flex:'1'}}>
+          <img style={imgStyle} src={arrow} />
+        </div>
+      </div>
+    );
+  }
+}
 
 class Colllapse extends Component {
   render(){
@@ -114,6 +151,9 @@ class Profile extends Component {
         <div className="main-column">
             <div className="main-col-container">
               <Box header="General">
+              <ToggleBox title="Favorites" colsrc={heart}>
+                <div>Some content</div>
+              </ToggleBox>
                 <Colllapse imgsrc={heart} text="Favorites"/>
                 <Colllapse imgsrc={user} text="Accounts"/>
                 <Colllapse imgsrc={favorite} text="Achievements"/>
@@ -123,6 +163,7 @@ class Profile extends Component {
                 <Colllapse imgsrc={tick} text="Update Interests"/>
                 <Colllapse imgsrc={blocked} text="Blocked Users"/>
               </Box>
+              
             </div>
         </div>
       </div>
