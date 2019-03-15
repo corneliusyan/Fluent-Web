@@ -1,0 +1,212 @@
+import React, { Component } from "react"
+import { withRouter } from 'react-router-dom'
+import logo from '../assets/img/logo.png';
+
+//------------------------SPEECH RECOGNITION-----------------------------
+
+const recognition = new window.webkitSpeechRecognition()
+
+recognition.continous = true
+recognition.interimResults = true
+recognition.lang = 'en-US'
+
+//------------------------COMPONENT-----------------------------
+
+class LectureDetails extends Component {
+
+  constructor() {
+    super()
+    this.startTime = 0;
+    this.state = {
+      listening: false,
+      text: 'Winter Vacation is the time to relax and celebrate in the company of friends and family. It comes after the second term examination and gives the much needed respite after a month of rigorous study. I await the winter vacations eagerly as I indulge in a lot of fun stuff during these holidays. Winter Vacations are mostly for fifteen days and two of the festivals I love the most i.e., Christmas and New Year fall during this time. So there is a flavour of festivities all around. I and my sister specially look forward to Christmas as our parents bring gifts for us and the whole house is illuminated with lights. We also shop for a lot of small bells, stars, reindeers and candies to decorate the Christmas tree. I purchase a gift for my sister. We love the delicious cake our mother prepares for us on Christmas. The celebration is completed with family dinner. There is festive vibe all around. New Year celebrations are all the more special. This is because we are either invited to some friends’ or relatives’ place or we host a party. It is time to meet our family friends and cousins. I enjoy the good food and good company on this day.',
+      time: 110,
+      par: '',
+      elapsed: 0,
+    }
+    this.toggleListen = this.toggleListen.bind(this)
+    this.handleListen = this.handleListen.bind(this)
+  }
+
+  start() {
+    this.startTime = new Date();
+  }
+  
+  end() {
+    var endTime = new Date();
+    var timeDiff = endTime - this.startTime; //in ms
+    // strip the ms
+    timeDiff /= 1000;
+  
+    // get seconds 
+    var seconds = Math.round(timeDiff);
+    return seconds;
+  }
+
+  toggleListen() {
+    this.setState({
+      listening: !this.state.listening
+    }, this.handleListen)
+  }
+
+  handleListen() {
+
+    console.log('listening?', this.state.listening)
+
+    if (this.state.listening) {
+      this.start()
+      recognition.start()
+      recognition.onend = () => {
+        console.log("...continue listening...")
+        recognition.start()
+      }
+
+    } else {
+      var elapsed = this.end()
+      recognition.stop()
+      recognition.onend = () => {
+        console.log("Stopped listening per click")
+      }
+
+      this.props.history.push({
+        pathname: '/analyze',
+        state: { par: this.state.par, text: this.state.text, elapsed: elapsed, time: this.state.time }
+      })
+    }
+
+    recognition.onstart = () => {
+      console.log("Listening!")
+    }
+
+    let finalTranscript = ''
+    recognition.onresult = event => {
+      let interimTranscript = ''
+
+      for (let i = event.resultIndex; i < event.results.length; i++) {
+        const transcript = event.results[i][0].transcript;
+        if (event.results[i].isFinal) finalTranscript += transcript + ' ';
+        else interimTranscript += transcript;
+      }
+
+      document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>'
+      //document.getElementById('final').innerHTML = finalTranscript
+      this.setState({
+        par: finalTranscript,
+      })
+
+    //-------------------------COMMANDS------------------------------------
+
+      const transcriptArr = finalTranscript.split(' ')
+      const stopCmd = transcriptArr.slice(-3, -1)
+      console.log('stopCmd', stopCmd)
+
+      if (stopCmd[0] === 'stop' && stopCmd[1] === 'listening'){
+        recognition.stop()
+        recognition.onend = () => {
+          console.log('Stopped listening per command')
+          const finalText = transcriptArr.slice(0, -3).join(' ')
+          console.log("Finaltext" + finalText)
+          //document.getElementById('final').innerHTML = finalText
+          this.setState({
+            par: finalText,
+          })
+        }
+      }
+    }
+    
+  //-----------------------------------------------------------------------
+    
+    recognition.onerror = event => {
+      console.log("Error occurred in recognition: " + event.error)
+    }
+
+  }
+
+  render() {
+    return (
+
+        <div class="main-container">
+            <div class="sidebar">
+                
+                <div class="sidebar-container">
+                    <h1>Lecture</h1>
+
+                    <p>Click on the microphone button when you are ready to start recording. Click on it again when you are done to analyze your result.</p>
+
+                </div>
+
+            </div>
+
+            <div class="main-column">
+                
+                <div class="main-col-container">
+                    
+                    <div style={container}>
+                        <div style={buttonContainer}>
+                            <img src={logo} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen}/>
+                        </div>
+
+                        <div style={textContainer}>
+                            <p style={paragraph}>{this.state.text}</p>
+                        </div>
+                    </div>
+
+                    <div style={container}>
+                        <div id='interim' style={interim}>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    )
+  }
+}
+
+export default LectureDetails
+
+
+//-------------------------CSS------------------------------------
+
+const styles = {
+  container: {
+    boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+    transition: '0.3s',
+    borderRadius: '5px',
+    width: '800px',
+    height: 'auto',
+    backgroundColor: '#ffffff',
+    marginBlockEnd: '30px',
+    display: 'block',
+    padding: '10px 5px'
+  },
+  button: {
+    left: '45%',
+    top: '10%',
+    width: '80px',
+    height: '80px',
+    position: 'relative'
+  },
+  buttonContainer: {
+    width: '100%',
+    height: '80px'
+  },
+  textContainer: {
+    width: '100%'
+  },
+  paragraph: {
+    margin: '5px 30px',
+    textAlign: 'justify'
+  },
+  interim: {
+    color: 'gray',
+    border: '#ccc 1px solid',
+    borderRadius: '5px',
+    padding: '1em',
+    margin: '1em',
+    width: '90%'
+  }
+}
+
+const { container, button, buttonContainer, paragraph, textContainer, interim } = styles

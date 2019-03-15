@@ -24,6 +24,7 @@ class Card extends Component{
 
     var imgStyle = {
       flex: 2,
+      width: 150,
     };
 
     var textStyle = {

@@ -43,7 +43,7 @@ class Lesson extends Component {
 
                     <div className="card-img-container">
                         <img src={rocket} alt="Lesson 1"/>
-                        <NavLink to={`/${this.state.satu}`}>
+                        <NavLink to={`/lessons/${this.state.satu}`}>
                           <button className="start-button">Start</button>
                         </NavLink>
                     </div>
@@ -62,7 +62,7 @@ class Lesson extends Component {
 
                     <div className="card-img-container">
                         <img src={ask} alt="Lesson 2"/>
-                        <NavLink to={`/${this.state.dua}`}>
+                        <NavLink to={`/lessons/${this.state.dua}`}>
                           <button className="start-button">Start</button>
                         </NavLink>
                     </div>
@@ -81,7 +81,7 @@ class Lesson extends Component {
 
                     <div className="card-img-container">
                         <img src={newsletter} alt="Lesson 3"/>
-                        <NavLink to={`/${this.state.tiga}`}>
+                        <NavLink to={`/lessons/${this.state.tiga}`}>
                           <button className="start-button">Start</button>
                         </NavLink>
                     </div>

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import ask from './assets/img/ask.png';
 import communication from './assets/img/communication.png';
 import health from './assets/img/health.png';
@@ -30,50 +31,60 @@ class Lecture extends Component {
         <div className="main-column">
             <div className="main-col-container">
                 <div className="row-container">
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={communication} className="card-small-image" alt="lecture"/>
+                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/1`}>
+                        <div className="card-small">
+                            <div className="card-small-image-container">
+                                <img src={communication} className="card-small-image" alt="lecture"/>
+                            </div>
+                            <div className="card-small-text-container">
+                                <h3>Greetings and General Things</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
                         </div>
-                        <div className="card-small-text-container">
-                            <h3>Greetings and General Things</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        </div>
-                    </div>
+                    </NavLink>
 
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={health} className="card-small-image" alt="lecture"/>
-                        </div>
+                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/2`}>
+                        <div className="card-small">
+                            <div className="card-small-image-container">
+                                <img src={health} className="card-small-image" alt="lecture"/>
+                            </div>
 
-                        <div className="card-small-text-container">
-                            <h3>Health, Dating, and Marriage</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div className="card-small-text-container">
+                                <h3>Health, Dating, and Marriage</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
                         </div>
-                    </div>
+                    </NavLink>
+                
                 </div>
 
                 <div className="row-container">
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={sport} className="card-small-image" alt="lecture"/>
-                        </div>
+                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/3`}>
+                        <div className="card-small">
+                            <div className="card-small-image-container">
+                                <img src={sport} className="card-small-image" alt="lecture"/>
+                            </div>
 
-                        <div className="card-small-text-container">
-                            <h3>Guys, Girls, and Sports</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div className="card-small-text-container">
+                                <h3>Guys, Girls, and Sports</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
                         </div>
-                    </div>
+                    </NavLink>
 
-                    <div className="card-small">
-                        <div className="card-small-image-container">
-                            <img src={hierarchy} className="card-small-image" alt="lecture"/>
-                        </div>
+                    <NavLink to={`/detail/${this.props.match.params.lesson_id}/4`}>
+                        <div className="card-small">
+                            <div className="card-small-image-container">
+                                <img src={hierarchy} className="card-small-image" alt="lecture"/>
+                            </div>
 
-                        <div className="card-small-text-container">
-                            <h3>Family, Children, and Friends</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div className="card-small-text-container">
+                                <h3>Family, Children, and Friends</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            </div>
                         </div>
-                    </div>
+                    </NavLink>
+                
                 </div>
 
             </div>

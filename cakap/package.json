@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "diff": "^4.0.1",
+    "difflib": "^0.2.4",
     "react": "^16.8.4",
+    "react-diff": "0.0.7",
     "react-dom": "^16.8.4",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
+    "react-speech-recognition": "^1.0.7",
+    "react-textarea-autosize": "^7.1.0",
     "typescript": "^3.3.3333"
   },
   "scripts": {
