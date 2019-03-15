@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import sound from './assets/sound/sound.mp3';
+import silence from './assets/sound/silence.mp3';
 import calling from './assets/img/call.gif';
 import man from './assets/img/man.png';
 
@@ -11,7 +12,7 @@ class Call extends Component {
     };
     this.playSound = this.playSound.bind(this);
     this.stopSound = this.stopSound.bind(this);
-    this.playSound();
+
   }
 
   playSound() {
@@ -48,8 +49,9 @@ class Call extends Component {
                 <img style={{width: 170, paddingTop: 80}} src={man}/>
             </div>
         </div>
+        <iframe src={silence} allow="autoplay" id="audio" style={{display: 'none'}}></iframe>
         <audio id="beep">
-          <source src={sound} type="audio/mp3" />
+          <source src={sound} type="audio/mp3" autoPlay />
         </audio>   
         <div className="main-column main-column-call" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
           <div className="main-col-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 150}}>
