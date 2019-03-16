@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import earth from './assets/img/earth.png';
 import finance from './assets/img/finance.png';
 import food from './assets/img/food.png';
@@ -34,12 +35,14 @@ class Card extends Component{
     }
 
     return(
-      <div className="card-small" style={cardStyle}>
-        <div style={{flex: 1}}></div>
-        <img style={imgStyle} src={this.props.imgsource}/>
-        <div style={{flex: 1}}></div>
-        <h3 style={textStyle}>{this.props.header}</h3>
-      </div>
+      <NavLink to="/call">
+        <div className="card-small" style={cardStyle}>
+          <div style={{flex: 1}}></div>
+          <img style={imgStyle} src={this.props.imgsource}/>
+          <div style={{flex: 1}}></div>
+          <h3 style={textStyle}>{this.props.header}</h3>
+        </div>
+      </NavLink>
     );
   }
 }
@@ -52,7 +55,7 @@ class Speak extends Component {
             <div className="sidebar-container">
                 <h1>Speak</h1>
                 <div style={{marginLeft: -25}}><Card bgcolor ="#FFF" imgsource={free} header="Free Talking" /></div>
-                <h3>Choose your topic!</h3>
+                <p>Talking with stranger and polish your speaking skill. What do you waiting for? Choose your topic!</p>
             </div>
         </div>
 
