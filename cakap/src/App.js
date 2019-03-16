@@ -13,6 +13,7 @@ import Profile from "./Profile";
 import Lecture from './Lecture';
 import Analyze from './Analyze';
 import Call from './Call';
+import Feedback from './Feedback'
 import LectureDetails1 from './LectureDetails/LectureDetails.1';
 import LectureDetails2 from './LectureDetails/LectureDetails.2';
 import LectureDetails3 from './LectureDetails/LectureDetails.3';
@@ -60,6 +61,7 @@ class App extends Component {
             <Route path="/detail/3/3" component={LectureDetails11}/>
             <Route path="/detail/3/4" component={LectureDetails12}/> 
 
+            <Route path="/feedback" component={Feedback}/>
             <Route path="/analyze" component={Analyze}/>
             <Route path="/practice" component={Practice}/>
             <Route path="/speak" component={Speak}/>

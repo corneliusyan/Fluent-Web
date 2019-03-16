@@ -58,7 +58,7 @@ class Call extends Component {
         <div className="main-column main-column-call" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
           <div className="main-col-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 150}}>
             <div style={{textAlign: 'center'}} onClick={this.playSound}><h1>Calling</h1></div>
-            <NavLink to="/speak">
+            <NavLink to="/feedback">
               <div style={{textAlign: 'center'}}>
                 <img onClick={this.stopSound} src={calling} />
               </div>
