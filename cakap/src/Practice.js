@@ -6,7 +6,7 @@ import logo from './assets/img/logo.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
-//const recognition = new window.webkitSpeechRecognition()
+const recognition = new window.webkitSpeechRecognition()
 
 recognition.continous = true
 recognition.interimResults = true
