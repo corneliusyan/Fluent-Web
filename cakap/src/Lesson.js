@@ -33,7 +33,7 @@ class Lesson extends Component {
                 <div className="card focused">
                     <div className="card-text-container">
                         <h1>Introduction</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                        <p>Welcome to the Introduction lesson! Here, you will get the basic lectures from Cakap. I'm sure you can do it easily!</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>
@@ -51,8 +51,8 @@ class Lesson extends Component {
 
                 <div className="card">
                     <div className="card-text-container">
-                        <h1>Getting to Know</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                        <h1>Amazing Quote</h1>
+                        <p>“Tell me and I forget. Teach me and I remember. Involve me and I learn.” - Benjamin Franklin. Wow, such a beautiful quote. Let’s read some more amazing quotes!</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>
@@ -70,8 +70,8 @@ class Lesson extends Component {
 
                 <div className="card">
                     <div className="card-text-container">
-                        <h1>What's Happening?</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+                        <h1>Great Holiday</h1>
+                        <p>Hi! Long time no see. How is your holiday? Is it great? Don't worry, Cakap will give you great holiday experince.</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>

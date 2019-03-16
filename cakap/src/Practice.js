@@ -6,7 +6,7 @@ import logo from './assets/img/logo.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
-const recognition = new window.webkitSpeechRecognition()
+//const recognition = new window.webkitSpeechRecognition()
 
 recognition.continous = true
 recognition.interimResults = true
@@ -154,7 +154,7 @@ class Practice extends Component {
             <div className="sidebar-container">
                 <img className="lesson-title-img" src={ask} alt="Getting to Know"/>
                 <h1>Practice</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                .<p>Do you have text and you want to practice speaking using it? Don't worry, Cakap can help you.</p>
             </div>
 
         </div>
