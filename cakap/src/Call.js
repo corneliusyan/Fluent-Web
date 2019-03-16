@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import sound from './assets/sound/sound.mp3';
 import silence from './assets/sound/silence.mp3';
 import calling from './assets/img/call.gif';
@@ -44,9 +45,10 @@ class Call extends Component {
     return (
       <div className="main-container">
         <div className="sidebar" style={{backgroundColor: '#94c9a9'}}>
-            <div className="sidebar-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 80}}>
+            <div className="sidebar-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 120}}>
                 <h1>Cadbury Carl</h1>
-                <img style={{width: 170, paddingTop: 80}} src={man}/>
+                <img style={{width: 170, paddingTop: 10}} src={man}/>
+                <p>Enjoy your conversation!</p>
             </div>
         </div>
         <iframe src={silence} allow="autoplay" id="audio" style={{display: 'none'}}></iframe>
@@ -56,9 +58,11 @@ class Call extends Component {
         <div className="main-column main-column-call" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
           <div className="main-col-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 150}}>
             <div style={{textAlign: 'center'}} onClick={this.playSound}><h1>Calling</h1></div>
-            <div style={{textAlign: 'center'}}>
-              <img onClick={this.stopSound} src={calling} />
-            </div>
+            <NavLink to="/speak">
+              <div style={{textAlign: 'center'}}>
+                <img onClick={this.stopSound} src={calling} />
+              </div>
+            </NavLink>
           </div>
         </div>
       </div>
