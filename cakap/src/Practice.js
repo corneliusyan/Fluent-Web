@@ -5,13 +5,13 @@ import { withRouter } from 'react-router-dom'
 import logo from './assets/img/logo.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
-/*
+
 const recognition = new window.webkitSpeechRecognition()
 
 recognition.continous = true
 recognition.interimResults = true
 recognition.lang = 'en-US'
- */
+
 class Card extends Component {
     render(){
         return(
@@ -69,7 +69,7 @@ class Practice extends Component {
       }
     
       handleListen() {
-    /*
+    
         console.log('listening?', this.state.listening)
     
         if (this.state.listening) {
@@ -143,7 +143,7 @@ class Practice extends Component {
         recognition.onerror = event => {
           console.log("Error occurred in recognition: " + event.error)
         }
-    */
+    
       }
 
   render() {
