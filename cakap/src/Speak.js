@@ -54,8 +54,8 @@ class Speak extends Component {
       <div className="main-container">
         <div className="sidebar">
             <div className="sidebar-container">
-                <h1>Speak</h1>
                 <div style={{marginLeft: -25}}><Card bgcolor ="#FFF" imgsource={free} header="Free Talking" /></div>
+                <h1>Speak</h1>
                 <p>Talking with stranger and polish your speaking skill. What do you waiting for? Choose your topic!</p>
             </div>
         </div>

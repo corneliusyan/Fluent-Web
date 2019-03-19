@@ -86,7 +86,7 @@ class Collapse extends Component {
 class Child extends Component {
   render(){
     var blockStyle = {
-      backgroundColor: '#e8f0f0',
+      backgroundColor: '#f1f1f1',
       color: 'black',
       width: 685,
       paddingLeft: 15,
@@ -160,6 +160,8 @@ class Profile extends Component {
                 <ToggleBox title="Edit Login Details" colsrc={unlocked}>
                   <Child text="Name"/>
                   <Child text="Photo"/>
+                  <Child text="Email"/>
+                  <Child text="Password"/>
                 </ToggleBox>
                 <ToggleBox title="Blocked Users" colsrc={blocked}>
                   <Child text="Elsie"/>
