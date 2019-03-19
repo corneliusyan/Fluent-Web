@@ -38,7 +38,9 @@ class TextInput extends Component {
     return (
       <form className="form-box" onSubmit={this.handleSubmit}>
         <input placeholder="Email" className="input-box" type="text" value={this.state.email} onChange={this.handleChangeEmail} />
+        <hr />
         <br/><input placeholder="Password" className="input-box" type="password" value={this.state.pass} onChange={this.handleChangePass} />
+        <hr />
         <br/><input className="sign" type="submit" value="sign in" />
       </form>
     );
@@ -65,9 +67,11 @@ class Login extends Component {
     };
 
     return (
-        
       <section style={sectionStyle}>
         <div>
+          <h1>Sign In</h1>
+          <h5>Welcome Back!</h5>
+          <h5>Ready to improve your speaking skill?</h5>
           <TextInput email="email" pass="pass" />
         </div>
       </section>
