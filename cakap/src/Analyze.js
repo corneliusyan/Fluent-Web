@@ -22,11 +22,6 @@ class Analyze extends Component {
 
         const script = document.createElement("script");
 
-        script.src = "./responsivevoice.js";
-
-        script.async = true;
-
-        document.body.appendChild(script);
 
         this.data = this.props.location.state
         window.source_text = this.data.text
