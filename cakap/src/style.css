@@ -405,6 +405,7 @@ html, body {
 .textarea-card textarea{
     padding: 10px;
     border-radius: 5px;
+    background-color: #f8f8f8;
 }
 
 .textarea-card textarea:focus { 
