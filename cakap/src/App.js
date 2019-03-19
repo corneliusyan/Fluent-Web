@@ -5,6 +5,8 @@ import {
   HashRouter
 } from "react-router-dom";
 import logo from './assets/img/logo2.png';
+import axios from 'axios'
+
 
 import Lesson from "./Lesson";
 import Practice from "./Practice";
@@ -30,49 +32,48 @@ import LectureDetails12 from './LectureDetails/LectureDetails.12';
 class App extends Component {
   render() {
     return (
-      // <HashRouter>
-      //   <div>
-      //     <div className="navbar">
-      //       <ul className="navbar-ul">
-      //         <li className="navbar-li"><img src={logo} alt="Celathu" className="logo"/></li>
-      //         <NavLink to="/"></NavLink>
-      //         <li className="navbar-li"><NavLink to="/lesson">Lessons</NavLink></li>
-      //         <li className="navbar-li"><NavLink to="/practice">Practice</NavLink></li>
-      //         <li className="navbar-li"><NavLink to="/speak">Speak</NavLink></li>
-      //         <li className="navbar-li"><NavLink to="/profile">Profile</NavLink></li>
-      //       </ul>
-      //     </div>
-      //     <div>
-      //       <Route exact path="/" component={Lesson}/>
-      //       <Route path="/lesson" component={Lesson}/>
+      <HashRouter>
+        <div>
+          <div className="navbar">
+            <ul className="navbar-ul">
+              <li className="navbar-li"><img src={logo} alt="Celathu" className="logo"/></li>
+              <NavLink to="/"></NavLink>
+              <li className="navbar-li"><NavLink to="/lesson">Lessons</NavLink></li>
+              <li className="navbar-li"><NavLink to="/practice">Practice</NavLink></li>
+              <li className="navbar-li"><NavLink to="/speak">Speak</NavLink></li>
+              <li className="navbar-li"><NavLink to="/profile">Profile</NavLink></li>
+            </ul>
+          </div>
+          <div>
+            <Route exact path="/" component={Lesson}/>
+            <Route path="/lesson" component={Lesson}/>
 
-      //       <Route path="/lessons/:lesson_id" component={Lecture}/>
-            
-      //       <Route path="/detail/1/1" component={LectureDetails1}/>
-      //       <Route path="/detail/1/2" component={LectureDetails2}/>
-      //       <Route path="/detail/1/3" component={LectureDetails3}/>
-      //       <Route path="/detail/1/4" component={LectureDetails4}/>
-      //       <Route path="/detail/2/1" component={LectureDetails5}/>
-      //       <Route path="/detail/2/2" component={LectureDetails6}/>
-      //       <Route path="/detail/2/3" component={LectureDetails7}/>
-      //       <Route path="/detail/2/4" component={LectureDetails8}/>
-      //       <Route path="/detail/3/1" component={LectureDetails9}/>
-      //       <Route path="/detail/3/2" component={LectureDetails10}/>
-      //       <Route path="/detail/3/3" component={LectureDetails11}/>
-      //       <Route path="/detail/3/4" component={LectureDetails12}/> 
+            <Route path="/lessons/:lesson_id" component={Lecture}/>
 
-      //       <Route path="/feedback" component={Feedback}/>
-      //       <Route path="/analyze" component={Analyze}/>
-      //       <Route path="/practice" component={Practice}/>
-      //       <Route path="/speak" component={Speak}/>
-      //       <Route path="/profile" component={Profile}/>
-      //       <Route path="/call" component={Call}/>
-            
-      //     </div>
-      //   </div>
-      // </HashRouter>
+            <Route path="/detail/1/1" component={LectureDetails1}/>
+            <Route path="/detail/1/2" component={LectureDetails2}/>
+            <Route path="/detail/1/3" component={LectureDetails3}/>
+            <Route path="/detail/1/4" component={LectureDetails4}/>
+            <Route path="/detail/2/1" component={LectureDetails5}/>
+            <Route path="/detail/2/2" component={LectureDetails6}/>
+            <Route path="/detail/2/3" component={LectureDetails7}/>
+            <Route path="/detail/2/4" component={LectureDetails8}/>
+            <Route path="/detail/3/1" component={LectureDetails9}/>
+            <Route path="/detail/3/2" component={LectureDetails10}/>
+            <Route path="/detail/3/3" component={LectureDetails11}/>
+            <Route path="/detail/3/4" component={LectureDetails12}/> 
 
-      <div>a</div>
+            <Route path="/feedback" component={Feedback}/>
+            <Route path="/analyze" component={Analyze}/>
+            <Route path="/practice" component={Practice}/>
+            <Route path="/speak" component={Speak}/>
+            <Route path="/profile" component={Profile}/>
+            <Route path="/call" component={Call}/>
+
+          </div>
+        </div>
+      </HashRouter>
+
     );
   }
 }
