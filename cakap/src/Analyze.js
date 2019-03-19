@@ -115,10 +115,10 @@ class Analyze extends Component {
         }
 
         return (
-            <div class="main-container">
-                <div class="sidebar">
+            <div className="main-container">
+                <div className="sidebar">
 
-                    <div class="sidebar-container">
+                    <div className="sidebar-container">
                         <h1>Result</h1>
 
                         <p>Keep going! You're doing great! Here's your result details.</p>
@@ -127,21 +127,21 @@ class Analyze extends Component {
 
                 </div>
 
-                <div class="main-column">
+                <div className="main-column">
 
-                    <div class="main-col-container">
+                    <div className="main-col-container">
 
-                        <div class="card">
-                            <div class="analyze-container">
-                                <div class="circle">
+                        <div className="card">
+                            <div className="analyze-container">
+                                <div className="circle">
                                     {
                                         this.state &&
-                                        <h3 class="analyze">{this.state.score}</h3>
+                                        <h3 className="analyze">{this.state.score}</h3>
                                     }
                                 </div>
                             </div>
 
-                            <div class="analyze-text">
+                            <div className="analyze-text">
                                 <h1>Clarity</h1>
                                 {
                                     this.state && <p>{this.state.score_text}</p>
@@ -150,17 +150,17 @@ class Analyze extends Component {
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="analyze-container">
-                                <div class="circle">
+                        <div className="card">
+                            <div className="analyze-container">
+                                <div className="circle">
                                     {
-                                        this.state && <h3 class="analyze">{this.state.pacing}</h3>
+                                        this.state && <h3 className="analyze">{this.state.pacing}</h3>
                                     }
 
                                 </div>
                             </div>
 
-                            <div class="analyze-text">
+                            <div className="analyze-text">
                                 <h1>Pacing</h1>
                                 {
                                     this.state && <p>{this.state.pacing_text}</p>
@@ -169,17 +169,17 @@ class Analyze extends Component {
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="analyze-text">
-                                <h1>Correct Pronunciation <img src={SpeakerBlue} onClick={() => window.responsiveVoice.speak(window.source_text)} class="pointer" style={SpeakerWidth} /></h1>
+                        <div className="card">
+                            <div className="analyze-text">
+                                <h1>Correct Pronunciation <img src={SpeakerBlue} onClick={() => window.responsiveVoice.speak(window.source_text)} className="pointer" style={SpeakerWidth} /></h1>
                                 {
                                     this.state && this.parseResults(this.state.result)
                                 }
                             </div>
                         </div>
 
-                        <div class="card">
-                            <div class="analyze-text">
+                        <div className="card">
+                            <div className="analyze-text">
                                 <h1>Wrong Words</h1>
                                 {
                                     this.state && <p>{this.getWrongWords(this.state.wrong_words)}</p>
