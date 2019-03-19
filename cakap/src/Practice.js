@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 import ask from './assets/img/ask.png';
-
-import { withRouter } from 'react-router-dom'
-import logo from './assets/img/logo.png';
+import mic from './assets/img/mic.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
-// const recognition = new window.webkitSpeechRecognition()
+const recognition = new window.webkitSpeechRecognition()
 
-// recognition.continous = true
-// recognition.interimResults = true
-// recognition.lang = 'en-US'
+recognition.continous = true
+recognition.interimResults = true
+recognition.lang = 'en-US'
 
 class Practice extends Component {
 
@@ -149,7 +147,7 @@ class Practice extends Component {
                 
                 <div className="textarea-card">
                     <div style={buttonContainer}>
-                        <img src={logo} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen}/>
+                        <img src={mic} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen}/>
                     </div>
                     <textarea rows="4" cols="95" placeholder="Input your text here." onChange={this.handleChange.bind(this)}>
                     </textarea>
