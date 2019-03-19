@@ -6,26 +6,11 @@ import logo from './assets/img/logo.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
-const recognition = new window.webkitSpeechRecognition()
+// const recognition = new window.webkitSpeechRecognition()
 
-recognition.continous = true
-recognition.interimResults = true
-recognition.lang = 'en-US'
-
-class Card extends Component {
-    render(){
-        return(
-            <div className="card-small">
-                <div className="card-small-image-container">
-                    <img src={this.props.imgsrc} className="card-small-image" alt="lecture"/>
-                </div>
-                <div className="card-small-text-container">
-                    <h3>{this.props.header}</h3>
-                </div>
-            </div>
-        );
-    }
-}
+// recognition.continous = true
+// recognition.interimResults = true
+// recognition.lang = 'en-US'
 
 class Practice extends Component {
 
@@ -70,79 +55,79 @@ class Practice extends Component {
     
       handleListen() {
     
-        console.log('listening?', this.state.listening)
+      //   console.log('listening?', this.state.listening)
     
-        if (this.state.listening) {
-          this.start()
-          var timer = (this.state.text.split(" ").length)/2;
-          this.setState({
-              time: timer
-          })
+      //   if (this.state.listening) {
+      //     this.start()
+      //     var timer = (this.state.text.split(" ").length)/2;
+      //     this.setState({
+      //         time: timer
+      //     })
 
-          recognition.start()
-          recognition.onend = () => {
-            console.log("...continue listening...")
-            recognition.start()
-          }
+      //     recognition.start()
+      //     recognition.onend = () => {
+      //       console.log("...continue listening...")
+      //       recognition.start()
+      //     }
     
-        } else {
-          var elapsed = this.end()
-          recognition.stop()
-          recognition.onend = () => {
-            console.log("Stopped listening per click")
-          }
+      //   } else {
+      //     var elapsed = this.end()
+      //     recognition.stop()
+      //     recognition.onend = () => {
+      //       console.log("Stopped listening per click")
+      //     }
     
-          this.props.history.push({
-            pathname: '/analyze',
-            state: { par: this.state.par, text: this.state.text, elapsed: elapsed, time: this.state.time }
-          })
-        }
+      //     this.props.history.push({
+      //       pathname: '/analyze',
+      //       state: { par: this.state.par, text: this.state.text, elapsed: elapsed, time: this.state.time }
+      //     })
+      //   }
     
-        recognition.onstart = () => {
-          console.log("Listening!")
-        }
+      //   recognition.onstart = () => {
+      //     console.log("Listening!")
+      //   }
     
-        let finalTranscript = ''
-        recognition.onresult = event => {
-          let interimTranscript = ''
+      //   let finalTranscript = ''
+      //   recognition.onresult = event => {
+      //     let interimTranscript = ''
     
-          for (let i = event.resultIndex; i < event.results.length; i++) {
-            const transcript = event.results[i][0].transcript;
-            if (event.results[i].isFinal) finalTranscript += transcript + ' ';
-            else interimTranscript += transcript;
-          }
+      //     for (let i = event.resultIndex; i < event.results.length; i++) {
+      //       const transcript = event.results[i][0].transcript;
+      //       if (event.results[i].isFinal) finalTranscript += transcript + ' ';
+      //       else interimTranscript += transcript;
+      //     }
     
-          document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>'
-          //document.getElementById('final').innerHTML = finalTranscript
-          this.setState({
-            par: finalTranscript,
-          })
+      //     document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>'
+      //     //document.getElementById('final').innerHTML = finalTranscript
+      //     this.setState({
+      //       par: finalTranscript,
+      //     })
     
-        //-------------------------COMMANDS------------------------------------
+      //   //-------------------------COMMANDS------------------------------------
     
-          const transcriptArr = finalTranscript.split(' ')
-          const stopCmd = transcriptArr.slice(-3, -1)
-          console.log('stopCmd', stopCmd)
+      //     const transcriptArr = finalTranscript.split(' ')
+      //     const stopCmd = transcriptArr.slice(-3, -1)
+      //     console.log('stopCmd', stopCmd)
     
-          if (stopCmd[0] === 'stop' && stopCmd[1] === 'listening'){
-            recognition.stop()
-            recognition.onend = () => {
-              console.log('Stopped listening per command')
-              const finalText = transcriptArr.slice(0, -3).join(' ')
-              console.log("Finaltext" + finalText)
-              //document.getElementById('final').innerHTML = finalText
-              this.setState({
-                par: finalText,
-              })
-            }
-          }
-        }
+      //     if (stopCmd[0] === 'stop' && stopCmd[1] === 'listening'){
+      //       recognition.stop()
+      //       recognition.onend = () => {
+      //         console.log('Stopped listening per command')
+      //         const finalText = transcriptArr.slice(0, -3).join(' ')
+      //         console.log("Finaltext" + finalText)
+      //         //document.getElementById('final').innerHTML = finalText
+      //         this.setState({
+      //           par: finalText,
+      //         })
+      //       }
+      //     }
+      //   }
         
-      //-----------------------------------------------------------------------
+      // //-----------------------------------------------------------------------
         
-        recognition.onerror = event => {
-          console.log("Error occurred in recognition: " + event.error)
-        }
+      //   recognition.onerror = event => {
+      //     console.log("Error occurred in recognition: " + event.error)
+      //   }
     
       }
 

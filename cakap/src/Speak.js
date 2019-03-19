@@ -38,7 +38,7 @@ class Card extends Component{
       <NavLink to="/call">
         <div className="card-small" style={cardStyle}>
           <div style={{flex: 1}}></div>
-          <img style={imgStyle} src={this.props.imgsource}/>
+          <img style={imgStyle} alt="img-speak" src={this.props.imgsource}/>
           <div style={{flex: 1}}></div>
           <h3 style={textStyle}>{this.props.header}</h3>
         </div>
