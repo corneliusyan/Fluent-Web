@@ -137,7 +137,7 @@ class Practice extends Component {
             <div className="sidebar-container">
                 <img className="lesson-title-img" src={ask} alt="Getting to Know"/>
                 <h1>Practice</h1>
-                .<p>Do you have text and you want to practice speaking using it? Don't worry, Celathu can help you.</p>
+                <p>Do you have text and you want to practice speaking using it? Don't worry, Celathu can help you.</p>
             </div>
 
         </div>
@@ -177,16 +177,15 @@ const styles = {
       borderRadius: '5px',
       width: '800px',
       height: 'auto',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#e8f0f0',
       marginBlockEnd: '30px',
       display: 'block',
-      padding: '10px 5px'
+      padding: '10px 20px'
     },
     button: {
       left: '45%',
       top: '10%',
       width: '70px',
-      height: '80px',
       position: 'relative'
     },
     buttonContainer: {
