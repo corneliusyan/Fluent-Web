@@ -13,9 +13,16 @@
     src: url('/assets/fonts/circular_bold.ttf') format('truetype'), 
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
     font-family: 'Circular', Fallback, sans-serif;
     color: #90aadf;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+h4, h5 {
+    font-family: 'Circular', Fallback, sans-serif;
+    color: #7b72a9;
     margin-block-start: 5px;
     margin-block-end: 5px;
 }
