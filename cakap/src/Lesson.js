@@ -33,7 +33,7 @@ class Lesson extends Component {
                 <div className="card focused">
                     <div className="card-text-container">
                         <h1>Introduction</h1>
-                        <p>Welcome to the Introduction lesson! Here, you will get the basic lectures from Cakap. I'm sure you can do it easily!</p>
+                        <p>Welcome to the Introduction lesson! Here, you will get the basic lectures from Celathu. I'm sure you can do it easily!</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>
@@ -71,7 +71,7 @@ class Lesson extends Component {
                 <div className="card">
                     <div className="card-text-container">
                         <h1>Great Holiday</h1>
-                        <p>Hi! Long time no see. How is your holiday? Is it great? Don't worry, Cakap will give you great holiday experince.</p>
+                        <p>Hi! Long time no see. How is your holiday? Is it great? Don't worry, Celathu will give you great holiday experince.</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>
