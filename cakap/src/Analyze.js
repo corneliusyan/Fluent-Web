@@ -9,6 +9,10 @@ const difflib = require('difflib');
 const API_BASE_URL = 'http://localhost:8000'
 const API_ANALYZE_URL = API_BASE_URL + '/analyze/'
 
+var score = 0;
+var pacing = 0;
+var pronunciation = [];
+
 class Analyze extends Component {
 
     constructor(props) {
@@ -25,31 +29,39 @@ class Analyze extends Component {
             input_time: this.data.elapsed,
             expected_time: this.data.time
         }
+        const self = this
         axios.post(API_ANALYZE_URL, payload)
             .then(function (response) {
                 console.log(response.data);
-                this.score = response.data.clarity * 100;
-                this.pacing = response.data.pace * 100;
+                window.score = response.data.clarity * 100;
+                window.pacing = response.data.pace * 100;
+                if (window.score >= 70) {
+                    window.score_text = "Your clarity in speaking is good. You can convey your messages clearly without any problems. Good job!"
+                } else {
+                    window.score_text = "Your clarity in speaking is low. You need to convey your messages clearly. Keep practicing!"
+                }
+        
+                // this.pacing = Math.floor((Number(this.props.location.state.time) / Number(this.props.location.state.elapsed)) * 100);
+        
+                if (window.pacing > 100) {
+                    window.pacing_text = "You need to speak slower. It appears that your pacing is too fast. It can hurt your messages and overall performance. Keep practicing!"
+                } else if (window.pacing <= 100 && window.pacing >= 70) {
+                    window.pacing_text = "Your pacing is very good. Good job! Keep it up! Speaking english is not that hard right?"
+                } else {
+                    window.pacing_text = "You need to speak faster. It appears that your pacing is too slow. It can hurt your messages and overall performance. Keep practicing!"
+                }
+
+                self.setState({
+                    score : window.score,
+                    score_text : window.score_text,
+                    pacing : window.pacing,
+                    pacing_text : window.pacing_text
+                });
             })
             .catch(function (error) {
                 console.log(error);
             });
-
-        if (this.score >= 70) {
-            this.score_text = "Your clarity in speaking is good. You can convey your messages clearly without any problems. Good job!"
-        } else {
-            this.score_text = "Your clarity in speaking is low. You need to convey your messages clearly. Keep practicing!"
-        }
-
-        // this.pacing = Math.floor((Number(this.props.location.state.time) / Number(this.props.location.state.elapsed)) * 100);
-
-        if (this.pacing > 100) {
-            this.pacing_text = "You need to speak slower. It appears that your pacing is too fast. It can hurt your messages and overall performance. Keep practicing!"
-        } else if (this.pacing <= 100 && this.pacing >= 70) {
-            this.pacing_text = "Your pacing is very good. Good job! Keep it up! Speaking english is not that hard right?"
-        } else {
-            this.pacing_text = "You need to speak faster. It appears that your pacing is too slow. It can hurt your messages and overall performance. Keep practicing!"
-        }
+        
     }
     render() {
         return (
@@ -73,26 +85,38 @@ class Analyze extends Component {
                         <div class="card">
                             <div class="analyze-container">
                                 <div class="circle">
-                                    <h3 class="analyze">{this.score}</h3>
+                                {
+                                    this.state && 
+                                    <h3 class="analyze">{this.state.score}</h3>
+                                }
                                 </div>
                             </div>
 
                             <div class="analyze-text">
                                 <h1>Clarity</h1>
-                                <p>{this.score_text}</p>
+                                {
+                                    this.state && <p>{this.state.score_text}</p>
+                                }
+                                
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="analyze-container">
                                 <div class="circle">
-                                    <h3 class="analyze">{this.pacing}</h3>
+                                {
+                                    this.state && <h3 class="analyze">{this.state.pacing}</h3>
+                                }
+                                    
                                 </div>
                             </div>
 
                             <div class="analyze-text">
                                 <h1>Pacing</h1>
-                                <p>{this.pacing_text}</p>
+                                {
+                                    this.state && <p>{this.state.pacing_text}</p>
+                                }
+                                
                             </div>
                         </div>
 
