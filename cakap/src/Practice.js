@@ -97,8 +97,8 @@ class Practice extends Component {
             if (event.results[i].isFinal) finalTranscript += transcript + ' ';
             else interimTranscript += transcript;
           }
-    
-          document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>'
+          document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>';
+          
           //document.getElementById('final').innerHTML = finalTranscript
           this.setState({
             par: finalTranscript,

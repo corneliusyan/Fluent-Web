@@ -46,7 +46,7 @@ class App extends Component {
             </ul>
           </div>
           <div>
-            <Route exact path="/" component={Login}/>
+            <Route exact path="/" component={Lesson}/>
             <Route path="/lesson" component={Lesson}/>
 
             <Route path="/lessons/:lesson_id" component={Lecture}/>
