@@ -9,9 +9,7 @@ const difflib = require('difflib');
 const API_BASE_URL = 'http://localhost:8000'
 const API_ANALYZE_URL = API_BASE_URL + '/analyze/'
 
-var score = 0;
-var pacing = 0;
-var pronunciation = [];
+var source_text;
 
 class Analyze extends Component {
 
@@ -22,7 +20,16 @@ class Analyze extends Component {
         // this.score = new difflib.SequenceMatcher(null, this.props.location.state.text, this.props.location.state.par).ratio();
         // this.score = Math.floor(this.score*100);
 
+        const script = document.createElement("script");
+
+        script.src = "./responsivevoice.js";
+
+        script.async = true;
+
+        document.body.appendChild(script);
+
         this.data = this.props.location.state
+        window.source_text = this.data.text
         let payload = {
             source_text: this.data.text,
             input_text: this.data.par,
@@ -70,7 +77,7 @@ class Analyze extends Component {
         let words = []
 
         for (let i = 0; i < wrong_words.length; i++) {
-            words.push(<li key={i}>{wrong_words[i]}</li>)
+            words.push(<li class="pointer" key={i} onClick={() => window.responsiveVoice.speak(wrong_words[i])}>{wrong_words[i]}</li>)
         }
         return words
     }
@@ -86,12 +93,10 @@ class Analyze extends Component {
                 result.push(text.substring(0, start_pos - 1))
             }
             while (start_pos > 0) {
-                console.log(start_pos, end_pos)
                 end_pos = text.indexOf('*', start_pos)
-                result.push(<font color="red"><i><b>{text.substring(start_pos, end_pos)}</b></i></font>)
+                result.push(<font color="red" key={start_pos}><i><b>{text.substring(start_pos, end_pos)}</b></i></font>)
 
                 start_pos = text.indexOf('*', end_pos + 1) + 1
-                console.log(start_pos, end_pos)
                 if (start_pos == 0) {
                     if (text[end_pos] == '*') {
                         end_pos++
@@ -102,7 +107,6 @@ class Analyze extends Component {
                 }
             }
         }
-        // result.push(text)
         return <p>{result}</p>
     }
 
@@ -162,9 +166,9 @@ class Analyze extends Component {
                             </div>
                         </div>
 
-                        <div class="card">
+                        <div class="card pointer" onClick={() => window.responsiveVoice.speak(window.source_text)}>
                             <div class="analyze-text">
-                                <h1>Result</h1>
+                                <h1>Correct Pronunciation</h1>
                                 {
                                     this.state && this.parseResults(this.state.result)
                                 }
@@ -177,19 +181,6 @@ class Analyze extends Component {
                                 {
                                     this.state && <p>{this.getWrongWords(this.state.wrong_words)}</p>
                                 }
-                            </div>
-                        </div>
-
-                        <div class="card">
-                            <div class="analyze-container">
-                                <div class="circle">
-                                    <h3 class="analyze">71</h3>
-                                </div>
-                            </div>
-
-                            <div class="analyze-text">
-                                <h1>Pronunciation</h1>
-                                <p>Your pronunciation is moderate. You can always learn to improve it by practicing. Keep up the good work!</p>
                             </div>
                         </div>
 

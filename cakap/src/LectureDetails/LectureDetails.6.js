@@ -143,7 +143,7 @@ class LectureDetails extends Component {
                     
                     <div style={container}>
                         <div style={buttonContainer}>
-                            <img src={logo} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen}/>
+                          <img src={logo} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
                         </div>
 
                         <div style={textContainer}>

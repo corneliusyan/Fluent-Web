@@ -147,7 +147,7 @@ class Practice extends Component {
                 
                 <div className="textarea-card">
                     <div style={buttonContainer}>
-                        <img src={mic} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen}/>
+                      <img src={mic} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
                     </div>
                     <textarea rows="4" cols="95" placeholder="Input your text here." onChange={this.handleChange.bind(this)}>
                     </textarea>
