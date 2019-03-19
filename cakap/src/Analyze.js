@@ -40,9 +40,9 @@ class Analyze extends Component {
                 } else {
                     window.score_text = "Your clarity in speaking is low. You need to convey your messages clearly. Keep practicing!"
                 }
-        
+
                 // this.pacing = Math.floor((Number(this.props.location.state.time) / Number(this.props.location.state.elapsed)) * 100);
-        
+
                 if (window.pacing > 100) {
                     window.pacing_text = "You need to speak slower. It appears that your pacing is too fast. It can hurt your messages and overall performance. Keep practicing!"
                 } else if (window.pacing <= 100 && window.pacing >= 70) {
@@ -52,17 +52,55 @@ class Analyze extends Component {
                 }
 
                 self.setState({
-                    score : window.score,
-                    score_text : window.score_text,
-                    pacing : window.pacing,
-                    pacing_text : window.pacing_text
+                    score: window.score,
+                    score_text: window.score_text,
+                    pacing: window.pacing,
+                    pacing_text: window.pacing_text,
+                    result: response.data.result,
+                    wrong_words: response.data.wrong_words
                 });
             })
             .catch(function (error) {
                 console.log(error);
             });
-        
+
     }
+
+    getWrongWords = wrong_words => {
+        let words = []
+
+        for (let i = 0; i < wrong_words.length; i++) {
+            words.push(<li key={i}>{wrong_words[i]}</li>)
+        }
+        return words
+    }
+
+    parseResults = text => {
+        let result = []
+        let start_pos = text.indexOf('*') + 1
+        let end_pos = 0
+        // if (start_pos == 0) {
+        //     result.push(text)
+        // } else {
+        //     if (start_pos > 0) {
+        //         result.push(text.substring(0, start_pos - 1))
+        //     }
+        //     while (start_pos > 0) {
+        //         end_pos = text.indexOf('*', start_pos)
+        //         result.push(text.substring(start_pos, end_pos))
+
+        //         start_pos = text.indexOf('*', end_pos) + 1
+        //         if (start_pos == 0) {
+        //             result.push(text.substring(start_pos, text.length))
+        //         } else {
+        //             result.push(text.substring(end_pos, start_pos))
+        //         }
+        //     }
+        // }
+        result.push(text)
+        return <p>{result}</p>
+    }
+
     render() {
         return (
             <div class="main-container">
@@ -81,14 +119,13 @@ class Analyze extends Component {
 
                     <div class="main-col-container">
 
-
                         <div class="card">
                             <div class="analyze-container">
                                 <div class="circle">
-                                {
-                                    this.state && 
-                                    <h3 class="analyze">{this.state.score}</h3>
-                                }
+                                    {
+                                        this.state &&
+                                        <h3 class="analyze">{this.state.score}</h3>
+                                    }
                                 </div>
                             </div>
 
@@ -97,17 +134,17 @@ class Analyze extends Component {
                                 {
                                     this.state && <p>{this.state.score_text}</p>
                                 }
-                                
+
                             </div>
                         </div>
 
                         <div class="card">
                             <div class="analyze-container">
                                 <div class="circle">
-                                {
-                                    this.state && <h3 class="analyze">{this.state.pacing}</h3>
-                                }
-                                    
+                                    {
+                                        this.state && <h3 class="analyze">{this.state.pacing}</h3>
+                                    }
+
                                 </div>
                             </div>
 
@@ -116,7 +153,25 @@ class Analyze extends Component {
                                 {
                                     this.state && <p>{this.state.pacing_text}</p>
                                 }
-                                
+
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="analyze-text">
+                                <h1>Result</h1>
+                                {
+                                    this.state && this.parseResults(this.state.result)
+                                }
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="analyze-text">
+                                <h1>Wrong Words</h1>
+                                {
+                                    this.state && <p>{this.getWrongWords(this.state.wrong_words)}</p>
+                                }
                             </div>
                         </div>
 
