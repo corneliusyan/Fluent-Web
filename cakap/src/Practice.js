@@ -185,7 +185,7 @@ const styles = {
     button: {
       left: '45%',
       top: '10%',
-      width: '80px',
+      width: '70px',
       height: '80px',
       position: 'relative'
     },
