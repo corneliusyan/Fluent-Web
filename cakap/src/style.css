@@ -303,15 +303,15 @@ html, body {
     border-radius: 5px; /* 5px rounded corners */
     width: 320px;
     height: 350px;
-    background-color: #ffffff;
+    background-color: #e8f0f0;
     margin: 30px;
     display: block;
 }
 
 .card-small:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     border: 1px solid #6a68fa;
-    margin: 29px;
+    margin: 30px;
 }
 
 .card-small-image {
@@ -388,6 +388,8 @@ html, body {
     margin-right: 20px;
 }
 
+/*textarea*/
+
 .textarea-card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
@@ -400,3 +402,28 @@ html, body {
     padding: 20px;
 } 
 
+.textarea-card textarea{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.textarea-card textarea:focus { 
+    outline: none;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+    color: #000000;
+}
+
+/*Signin*/
+
+.signin-page {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.signin-page img{
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}

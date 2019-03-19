@@ -32,6 +32,7 @@ class Card extends Component{
       margin: 10,
       lineHeight: 1.8,
       flex: 1,
+      color: '#000000',
     }
 
     return(

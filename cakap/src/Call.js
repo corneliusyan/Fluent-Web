@@ -11,8 +11,8 @@ class Call extends Component {
     this.state = {
       playSound: false,
     };
-    this.playSound = this.playSound.bind(this);
-    this.stopSound = this.stopSound.bind(this);
+    // this.playSound = this.playSound.bind(this);
+    // this.stopSound = this.stopSound.bind(this);
 
   }
 
@@ -44,7 +44,7 @@ class Call extends Component {
   render() {
     return (
       <div className="main-container">
-        <div className="sidebar" style={{backgroundColor: '#94c9a9'}}>
+        <div className="sidebar">
             <div className="sidebar-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 120}}>
                 <h1>Cadbury Carl</h1>
                 <img style={{width: 170, paddingTop: 10}} alt="boy" src={man}/>

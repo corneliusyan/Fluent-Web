@@ -26,11 +26,6 @@ import LectureDetails9 from './LectureDetails/LectureDetails.9';
 import LectureDetails10 from './LectureDetails/LectureDetails.10';
 import LectureDetails11 from './LectureDetails/LectureDetails.11';
 import LectureDetails12 from './LectureDetails/LectureDetails.12';
-import chatgray from './assets/img/chat-gray.png';
-import mapgray from './assets/img/map-gray.png';
-import micgray from './assets/img/mic-gray.png';
-import speakergray from './assets/img/speaker-gray.png';
-import usergray from './assets/img/user-gray.png';
 
 class App extends Component {
   render() {

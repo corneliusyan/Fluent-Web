@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { withRouter } from 'react-router-dom'
-import logo from '../assets/img/logo.png';
+import logo from '../assets/img/mic.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
