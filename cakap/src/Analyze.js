@@ -79,25 +79,30 @@ class Analyze extends Component {
         let result = []
         let start_pos = text.indexOf('*') + 1
         let end_pos = 0
-        // if (start_pos == 0) {
-        //     result.push(text)
-        // } else {
-        //     if (start_pos > 0) {
-        //         result.push(text.substring(0, start_pos - 1))
-        //     }
-        //     while (start_pos > 0) {
-        //         end_pos = text.indexOf('*', start_pos)
-        //         result.push(text.substring(start_pos, end_pos))
+        if (start_pos == 0) {
+            result.push(text)
+        } else {
+            if (start_pos > 1) {
+                result.push(text.substring(0, start_pos - 1))
+            }
+            while (start_pos > 0) {
+                console.log(start_pos, end_pos)
+                end_pos = text.indexOf('*', start_pos)
+                result.push(<font color="red"><i><b>{text.substring(start_pos, end_pos)}</b></i></font>)
 
-        //         start_pos = text.indexOf('*', end_pos) + 1
-        //         if (start_pos == 0) {
-        //             result.push(text.substring(start_pos, text.length))
-        //         } else {
-        //             result.push(text.substring(end_pos, start_pos))
-        //         }
-        //     }
-        // }
-        result.push(text)
+                start_pos = text.indexOf('*', end_pos + 1) + 1
+                console.log(start_pos, end_pos)
+                if (start_pos == 0) {
+                    if (text[end_pos] == '*') {
+                        end_pos++
+                    }
+                    result.push(text.substring(end_pos, text.length))
+                } else {
+                    result.push(text.substring(end_pos + 1, start_pos - 1))
+                }
+            }
+        }
+        // result.push(text)
         return <p>{result}</p>
     }
 
