@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-=======
 import { NavLink } from "react-router-dom";
 import axios from 'axios'
->>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
 
 const Diff = require('diff');
 const difflib = require('difflib');

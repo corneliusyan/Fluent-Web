@@ -58,7 +58,7 @@ html, body {
 }
 
 .main-column {
-    background-color: #f1f1f1;
+    background-color: #ffffff;
     margin-left: 35%;
     width: 50%;
     padding-right: 15%;
@@ -134,17 +134,64 @@ html, body {
     widht: 40%;
 }
 
+/*Navbar*/
+
 .navbar {
-    height: 94px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    background-color: #e8f0f0;
+    position: fixed; /* Set the navbar to fixed position */
+    z-index: 2;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.logo {
+    height: 70px;
+    margin-block-end: 5px;
+    margin-block-start: 5px;
+    margin: -10px;
 }
 
 .navbar-li {
-    list-style: none;
-}
-.navbar-li img{
-    height: 90px;
+    float: left;
+    margin-block-end: 5px;
+    margin-block-start: 5px;
 }
 
-.logo{
-    height: 50px;
+.navbar-li a {
+    font-size: 12px;
+    display: block;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    margin-block-end: 5px;
+    margin-block-start: 5px;
+    margin-left: 8.4vw;
+}
+
+.navbar-li a:hover {
+    color: #90aadf;
+}
+
+.active{
+    color: #90aadf;
+    font-weight: bold;
+}
+
+/*Card*/
+
+.card-text-container{
+    background-color: #e8f0f0;
+    height: 40px;
+
 }

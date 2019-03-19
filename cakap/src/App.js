@@ -4,13 +4,9 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
-<<<<<<< HEAD
 import logo from './assets/img/logo.png';
-=======
-import logo from './assets/img/logo2.png';
-import axios from 'axios'
+//import axios from 'axios'
 
->>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
 
 import Lesson from "./Lesson";
 import Practice from "./Practice";
@@ -20,18 +16,18 @@ import Lecture from './Lecture';
 import Analyze from './Analyze';
 import Call from './Call';
 import Feedback from './Feedback'
-// import LectureDetails1 from './LectureDetails/LectureDetails.1';
-// import LectureDetails2 from './LectureDetails/LectureDetails.2';
-// import LectureDetails3 from './LectureDetails/LectureDetails.3';
-// import LectureDetails4 from './LectureDetails/LectureDetails.4';
-// import LectureDetails5 from './LectureDetails/LectureDetails.5';
-// import LectureDetails6 from './LectureDetails/LectureDetails.6';
-// import LectureDetails7 from './LectureDetails/LectureDetails.7';
-// import LectureDetails8 from './LectureDetails/LectureDetails.8';
-// import LectureDetails9 from './LectureDetails/LectureDetails.9';
-// import LectureDetails10 from './LectureDetails/LectureDetails.10';
-// import LectureDetails11 from './LectureDetails/LectureDetails.11';
-// import LectureDetails12 from './LectureDetails/LectureDetails.12';
+import LectureDetails1 from './LectureDetails/LectureDetails.1';
+import LectureDetails2 from './LectureDetails/LectureDetails.2';
+import LectureDetails3 from './LectureDetails/LectureDetails.3';
+import LectureDetails4 from './LectureDetails/LectureDetails.4';
+import LectureDetails5 from './LectureDetails/LectureDetails.5';
+import LectureDetails6 from './LectureDetails/LectureDetails.6';
+import LectureDetails7 from './LectureDetails/LectureDetails.7';
+import LectureDetails8 from './LectureDetails/LectureDetails.8';
+import LectureDetails9 from './LectureDetails/LectureDetails.9';
+import LectureDetails10 from './LectureDetails/LectureDetails.10';
+import LectureDetails11 from './LectureDetails/LectureDetails.11';
+import LectureDetails12 from './LectureDetails/LectureDetails.12';
 import chatgray from './assets/img/chat-gray.png';
 import mapgray from './assets/img/map-gray.png';
 import micgray from './assets/img/mic-gray.png';
@@ -45,16 +41,12 @@ class App extends Component {
         <div>
           <div className="navbar">
             <ul className="navbar-ul">
-<<<<<<< HEAD
-              <li className="navbar-li"><img src={logo} alt="Celathu"/></li>
-=======
               <li className="navbar-li"><img src={logo} alt="Celathu" className="logo"/></li>
->>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
               <NavLink to="/"></NavLink>
-              <li className="navbar-li"><NavLink to="/lesson"><img src={mapgray} alt="Lesson" className="logo"/></NavLink></li>
-              <li className="navbar-li"><NavLink to="/practice"><img src={chatgray} alt="Practice" className="logo"/></NavLink></li>
-              <li className="navbar-li"><NavLink to="/speak"><img src={micgray} alt="Speak" className="logo"/></NavLink></li>
-              <li className="navbar-li"><NavLink to="/profile"><img src={usergray} alt="Profile" className="logo"/></NavLink></li>
+              <li className="navbar-li"><NavLink to="/lesson">Lesson</NavLink></li>
+              <li className="navbar-li"><NavLink to="/practice">Practice</NavLink></li>
+              <li className="navbar-li"><NavLink to="/speak">Speak</NavLink></li>
+              <li className="navbar-li"><NavLink to="/profile">Profile</NavLink></li>
             </ul>
           </div>
           <div>
@@ -62,13 +54,8 @@ class App extends Component {
             <Route path="/lesson" component={Lesson}/>
 
             <Route path="/lessons/:lesson_id" component={Lecture}/>
-<<<<<<< HEAD
-            
-            {/* <Route path="/detail/1/1" component={LectureDetails1}/>
-=======
 
             <Route path="/detail/1/1" component={LectureDetails1}/>
->>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
             <Route path="/detail/1/2" component={LectureDetails2}/>
             <Route path="/detail/1/3" component={LectureDetails3}/>
             <Route path="/detail/1/4" component={LectureDetails4}/>
