@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import axios from 'axios'
 
+import SpeakerGray from './assets/img/speaker-gray.png';
+import SpeakerBlue from './assets/img/speaker-blue.png';
+
 const Diff = require('diff');
 const difflib = require('difflib');
-
 
 const API_BASE_URL = 'http://localhost:8000'
 const API_ANALYZE_URL = API_BASE_URL + '/analyze/'
@@ -70,9 +72,11 @@ class Analyze extends Component {
 
     getWrongWords = wrong_words => {
         let words = []
-
+        let SpeakerWidth = {
+            width: 15
+        }
         for (let i = 0; i < wrong_words.length; i++) {
-            words.push(<li class="pointer" key={i} onClick={() => window.responsiveVoice.speak(wrong_words[i])}>{wrong_words[i]}</li>)
+            words.push(<li key={i}>{wrong_words[i]} <img src={SpeakerGray} onClick={() => window.responsiveVoice.speak(wrong_words[i])} class="pointer" style={SpeakerWidth} /></li>)
         }
         return words
     }
@@ -106,6 +110,10 @@ class Analyze extends Component {
     }
 
     render() {
+        let SpeakerWidth = {
+            width: 25
+        }
+
         return (
             <div class="main-container">
                 <div class="sidebar">
@@ -161,9 +169,9 @@ class Analyze extends Component {
                             </div>
                         </div>
 
-                        <div class="card pointer" onClick={() => window.responsiveVoice.speak(window.source_text)}>
+                        <div class="card">
                             <div class="analyze-text">
-                                <h1>Correct Pronunciation</h1>
+                                <h1>Correct Pronunciation <img src={SpeakerBlue} onClick={() => window.responsiveVoice.speak(window.source_text)} class="pointer" style={SpeakerWidth} /></h1>
                                 {
                                     this.state && this.parseResults(this.state.result)
                                 }
