@@ -36,6 +36,7 @@ def analyze(input, source, time, expected_time=0):
 
     # pace calculation
     # if expected_time wasn't set, replace it with <total words in source>*second_per_word
+    # TODO : handle pace > 1
     if expected_time == 0:
         expected_time = len(source.split())*second_per_word
     if time-expected_time <= 0:

@@ -1,16 +1,42 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
+=======
+import { NavLink } from "react-router-dom";
+import axios from 'axios'
+>>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
 
 const Diff = require('diff');
 const difflib = require('difflib');
- 
+
+
+const API_BASE_URL = 'http://localhost:8000'
+const API_ANALYZE_URL = API_BASE_URL + '/analyze/'
+
 class Analyze extends Component {
 
     constructor(props) {
         super(props);
         console.log(this.props.location.state);
-        this.diff = Diff.diffWords(this.props.location.state.text, this.props.location.state.par, true);
-        this.score = new difflib.SequenceMatcher(null, this.props.location.state.text, this.props.location.state.par).ratio();
-        this.score = Math.floor(this.score*100);
+        // this.diff = Diff.diffWords(this.props.location.state.text, this.props.location.state.par, true);
+        // this.score = new difflib.SequenceMatcher(null, this.props.location.state.text, this.props.location.state.par).ratio();
+        // this.score = Math.floor(this.score*100);
+
+        this.data = this.props.location.state
+        let payload = {
+            source_text: this.data.text,
+            input_text: this.data.par,
+            input_time: this.data.elapsed,
+            expected_time: this.data.time
+        }
+        axios.post(API_ANALYZE_URL, payload)
+            .then(function (response) {
+                console.log(response.data);
+                this.score = response.data.clarity * 100;
+                this.pacing = response.data.pace * 100;
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
 
         if (this.score >= 70) {
             this.score_text = "Your clarity in speaking is good. You can convey your messages clearly without any problems. Good job!"
@@ -18,7 +44,7 @@ class Analyze extends Component {
             this.score_text = "Your clarity in speaking is low. You need to convey your messages clearly. Keep practicing!"
         }
 
-        this.pacing = Math.floor((Number(this.props.location.state.time) / Number(this.props.location.state.elapsed)) * 100);
+        // this.pacing = Math.floor((Number(this.props.location.state.time) / Number(this.props.location.state.elapsed)) * 100);
 
         if (this.pacing > 100) {
             this.pacing_text = "You need to speak slower. It appears that your pacing is too fast. It can hurt your messages and overall performance. Keep practicing!"
@@ -32,7 +58,7 @@ class Analyze extends Component {
         return (
             <div class="main-container">
                 <div class="sidebar">
-                    
+
                     <div class="sidebar-container">
                         <h1>Result</h1>
 
@@ -43,10 +69,10 @@ class Analyze extends Component {
                 </div>
 
                 <div class="main-column">
-                    
+
                     <div class="main-col-container">
 
-                        
+
                         <div class="card">
                             <div class="analyze-container">
                                 <div class="circle">
@@ -93,5 +119,5 @@ class Analyze extends Component {
         )
     }
 }
- 
+
 export default Analyze;

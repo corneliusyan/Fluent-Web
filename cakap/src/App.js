@@ -4,7 +4,13 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
+<<<<<<< HEAD
 import logo from './assets/img/logo.png';
+=======
+import logo from './assets/img/logo2.png';
+import axios from 'axios'
+
+>>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
 
 import Lesson from "./Lesson";
 import Practice from "./Practice";
@@ -39,7 +45,11 @@ class App extends Component {
         <div>
           <div className="navbar">
             <ul className="navbar-ul">
+<<<<<<< HEAD
               <li className="navbar-li"><img src={logo} alt="Celathu"/></li>
+=======
+              <li className="navbar-li"><img src={logo} alt="Celathu" className="logo"/></li>
+>>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
               <NavLink to="/"></NavLink>
               <li className="navbar-li"><NavLink to="/lesson"><img src={mapgray} alt="Lesson" className="logo"/></NavLink></li>
               <li className="navbar-li"><NavLink to="/practice"><img src={chatgray} alt="Practice" className="logo"/></NavLink></li>
@@ -52,8 +62,13 @@ class App extends Component {
             <Route path="/lesson" component={Lesson}/>
 
             <Route path="/lessons/:lesson_id" component={Lecture}/>
+<<<<<<< HEAD
             
             {/* <Route path="/detail/1/1" component={LectureDetails1}/>
+=======
+
+            <Route path="/detail/1/1" component={LectureDetails1}/>
+>>>>>>> 2d414a8b326bdc73e646d45d79a9e061f1adf1c2
             <Route path="/detail/1/2" component={LectureDetails2}/>
             <Route path="/detail/1/3" component={LectureDetails3}/>
             <Route path="/detail/1/4" component={LectureDetails4}/>
@@ -72,10 +87,11 @@ class App extends Component {
             <Route path="/speak" component={Speak}/>
             <Route path="/profile" component={Profile}/>
             <Route path="/call" component={Call}/>
-            
+
           </div>
         </div>
       </HashRouter>
+
     );
   }
 }
