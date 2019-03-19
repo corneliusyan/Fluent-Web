@@ -64,7 +64,7 @@ class Collapse extends Component {
     };
 
     var circleStyle = {
-      background: '#6a68fa',
+      background: '#7b72a9',
       width: 40,
       height: 40,
       borderRadius: 20,
@@ -160,9 +160,6 @@ class Profile extends Component {
                 <ToggleBox title="Edit Login Details" colsrc={unlocked}>
                   <Child text="Name"/>
                   <Child text="Photo"/>
-                </ToggleBox>
-                <ToggleBox title="Update Interests" colsrc={tick}>
-                  <Child text="Mathematic"/>
                 </ToggleBox>
                 <ToggleBox title="Blocked Users" colsrc={blocked}>
                   <Child text="Elsie"/>

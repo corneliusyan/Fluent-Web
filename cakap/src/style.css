@@ -122,7 +122,7 @@ html, body {
 }
 
 .sidebar-active { 
-    color: #6a68fa;
+    color: #7b72a9;
 }
 
 .lesson-title-img {
@@ -272,9 +272,9 @@ html, body {
 .start-button {
     font-family: 'Circular Book', Fallback, sans-serif;
     font-size: 14px;
-    border: 2px solid #6a68fa;
+    border: 2px solid #7b72a9;
     background-color: #e8f0f0;
-    color: #6a68fa;
+    color: #7b72a9;
     cursor: pointer;
     border-radius: 5px;
     width: 120px;
@@ -310,7 +310,7 @@ html, body {
 
 .card-small:hover {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    border: 1px solid #6a68fa;
+    border: 1px solid #7b72a9;
     margin: 30px;
 }
 
@@ -323,7 +323,7 @@ html, body {
 }
 
 .card-small-image-container {
-    background-color: #6a68fa;
+    background-color: #7b72a9;
     height: 75%;
     width: 100%;
     border-top-left-radius: 5px;
@@ -356,7 +356,7 @@ html, body {
     color: #fff;
     line-height: 100px;
     text-align: center;
-    background: #6a68fa;
+    background: #7b72a9;
 }
 
 .analyze {

@@ -49,7 +49,7 @@
 }
 
 .active {
-    color: #6a68fa;
+    color: #7b72a9;
 }
 
 /* Card */
@@ -136,9 +136,9 @@
 .start-button {
     font-family: 'Circular Book', Fallback, sans-serif;
     font-size: 14px;
-    border: 2px solid #6a68fa;
+    border: 2px solid #7b72a9;
     background-color: white;
-    color: #6a68fa;
+    color: #7b72a9;
     cursor: pointer;
     border-radius: 5px;
     width: 120px;
@@ -173,7 +173,7 @@
 
 .card-small:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    border: 1px solid #6a68fa;
+    border: 1px solid #7b72a9;
     margin: 29px;
 }
 
@@ -186,7 +186,7 @@
 }
 
 .card-small-image-container {
-    background-color: #6a68fa;
+    background-color: #7b72a9;
     height: 75%;
     width: 100%;
     border-top-left-radius: 5px;
@@ -219,7 +219,7 @@
     color: #fff;
     line-height: 100px;
     text-align: center;
-    background: #6a68fa;
+    background: #7b72a9;
 }
 
 .analyze {
