@@ -30,11 +30,12 @@ import LectureDetails12 from './LectureDetails/LectureDetails.12';
 
 class App extends Component {
   render() {
+
     return (
       <HashRouter>
         <div>
-        
-          <div className="navbar">
+
+          <div id="navbar">
             <ul className="navbar-ul">
               <li className="navbar-li"><img src={logo} alt="Celathu" className="logo"/></li>
               <NavLink to="/"></NavLink>

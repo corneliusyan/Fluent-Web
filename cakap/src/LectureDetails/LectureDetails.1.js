@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { withRouter } from 'react-router-dom'
-import logo from '../assets/img/mic.png';
+import mic from '../assets/img/mic.png';
+import rec from '../assets/img/rec-on.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -23,6 +24,7 @@ class LectureDetails extends Component {
       time: 3,
       par: '',
       elapsed: 0,
+      record: mic,
     }
     this.toggleListen = this.toggleListen.bind(this)
     this.handleListen = this.handleListen.bind(this)
@@ -44,6 +46,7 @@ class LectureDetails extends Component {
   }
 
   toggleListen() {
+    this.setState({ record: rec});
     this.setState({
       listening: !this.state.listening
     }, this.handleListen)
@@ -143,7 +146,7 @@ class LectureDetails extends Component {
                     
                     <div style={container}>
                         <div style={buttonContainer}>
-                            <img src={logo} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
+                            <img src={this.state.record} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
                         </div>
 
                         <div style={textContainer}>

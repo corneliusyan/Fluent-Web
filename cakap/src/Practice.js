@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ask from './assets/img/ask.png';
 import mic from './assets/img/mic.png';
+import rec from './assets/img/rec-on.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -21,6 +22,7 @@ class Practice extends Component {
           time: 0,
           par: '',
           elapsed: 0,
+          record: mic,
         }
         this.toggleListen = this.toggleListen.bind(this)
         this.handleListen = this.handleListen.bind(this)
@@ -42,9 +44,10 @@ class Practice extends Component {
       }
     
       toggleListen() {
+        this.setState({ record: rec});
         this.setState({
           listening: !this.state.listening
-        }, this.handleListen)
+        }, this.handleListen);
       }
 
       handleChange(e){
@@ -147,7 +150,7 @@ class Practice extends Component {
                 
                 <div className="textarea-card">
                     <div style={buttonContainer}>
-                      <img src={mic} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
+                      <img src={this.state.record} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
                     </div>
                     <textarea rows="4" cols="95" placeholder="Input your text here." onChange={this.handleChange.bind(this)}>
                     </textarea>

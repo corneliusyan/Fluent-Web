@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import {
-  Route,
-  NavLink,
-  HashRouter
-} from "react-router-dom";
 import signin from './assets/img/signin.jpg';
 
 class TextInput extends Component {
@@ -29,7 +24,6 @@ class TextInput extends Component {
   }
 
   handleSubmit(event) {
-    let navigate;
     if (this.state.email == this.props.email && this.state.pass == this.props.pass){
       window.location.href = "http://localhost:3000/#/lesson";
       this.setState({isValid : true});
@@ -52,7 +46,12 @@ class TextInput extends Component {
 }
 
 class Login extends Component {  
+  constructor(){
+    super();
+    //document.getElementById('navbar').style.display="none";
+  }
   render() {
+    
     var sectionStyle = {
       backgroundImage : "url(" + signin + ")",
       backgroundSize: "cover",
@@ -66,6 +65,7 @@ class Login extends Component {
     };
 
     return (
+        
       <section style={sectionStyle}>
         <div>
           <TextInput email="email" pass="pass" />

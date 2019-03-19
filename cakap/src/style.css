@@ -136,7 +136,7 @@ html, body {
 
 /*Navbar*/
 
-.navbar {
+#navbar {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
     background-color: #e8f0f0;
     position: fixed; /* Set the navbar to fixed position */
