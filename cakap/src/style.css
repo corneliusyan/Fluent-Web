@@ -430,16 +430,16 @@ html, body {
 }
 
 .form-box{
-    margin-top: 200px;
+    margin-top: 25vh;
 }
 
 .input-box{
     font-family: 'Circular Book', Fallback, sans-serif;
     border: none;
     background-color:	#f9f9f9;   
-    margin: 22px;
+    margin: 1.8vh;
     width: 360px;
-    padding: 3px 10px;
+    padding: 10px 10px;
     font-size: 14px;
 }
 
@@ -448,7 +448,7 @@ html, body {
 }
 
 .sign{
-    margin-top: 90px;
+    margin-top: 11vh;
     border: none;
     background-color: 	#86D4C2;  
     width: 200px;
