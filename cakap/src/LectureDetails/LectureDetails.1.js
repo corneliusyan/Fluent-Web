@@ -155,7 +155,7 @@ class LectureDetails extends Component {
                     </div>
 
                     <div style={container}>
-                        <div id='interim' style={interim}>
+                        <div id="interim" style={interimStyle}>
                         </div>
                     </div>
 
@@ -202,7 +202,7 @@ const styles = {
     margin: '5px 30px',
     textAlign: 'justify'
   },
-  interim: {
+  interimStyle: {
     color: 'gray',
     border: '#ccc 1px solid',
     borderRadius: '5px',
@@ -212,4 +212,4 @@ const styles = {
   }
 }
 
-const { container, button, buttonContainer, paragraph, textContainer, interim } = styles
+const { container, button, buttonContainer, paragraph, textContainer, interimStyle } = styles
