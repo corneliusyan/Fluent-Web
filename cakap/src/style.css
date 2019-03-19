@@ -428,6 +428,34 @@ html, body {
     width: 100%;
 }
 
+.form-box{
+    margin-top: 200px;
+}
+
+.input-box{
+    font-family: 'Circular Book', Fallback, sans-serif;
+    border: none;
+    background-color:	#f9f9f9;   
+    margin: 22px;
+    width: 360px;
+    padding: 3px 10px;
+    font-size: 14px;
+}
+
+.input-box:focus{
+    outline: none;
+}
+
+.sign{
+    margin-top: 90px;
+    border: none;
+    background-color: 	#86D4C2;  
+    width: 200px;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 20px;
+}
 .pointer{
     cursor: pointer;
 }

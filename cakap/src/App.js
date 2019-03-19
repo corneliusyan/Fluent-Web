@@ -14,6 +14,7 @@ import Lecture from './Lecture';
 import Analyze from './Analyze';
 import Call from './Call';
 import Feedback from './Feedback'
+import Login from './Login'
 import LectureDetails1 from './LectureDetails/LectureDetails.1';
 import LectureDetails2 from './LectureDetails/LectureDetails.2';
 import LectureDetails3 from './LectureDetails/LectureDetails.3';
@@ -32,6 +33,7 @@ class App extends Component {
     return (
       <HashRouter>
         <div>
+        
           <div className="navbar">
             <ul className="navbar-ul">
               <li className="navbar-li"><img src={logo} alt="Celathu" className="logo"/></li>
@@ -43,7 +45,7 @@ class App extends Component {
             </ul>
           </div>
           <div>
-            <Route exact path="/" component={Lesson}/>
+            <Route exact path="/" component={Login}/>
             <Route path="/lesson" component={Lesson}/>
 
             <Route path="/lessons/:lesson_id" component={Lecture}/>
