@@ -53,7 +53,7 @@ class Collapse extends Component {
   render(){
     var blockStyle = {
       display:'flex',
-      backgroundColor: 'white',
+      backgroundColor: '#e8f0f0',
       color: 'black',
       width: 700,
     };
@@ -86,7 +86,7 @@ class Collapse extends Component {
 class Child extends Component {
   render(){
     var blockStyle = {
-      backgroundColor: '#f8f8f8',
+      backgroundColor: '#e8f0f0',
       color: 'black',
       width: 685,
       paddingLeft: 15,
