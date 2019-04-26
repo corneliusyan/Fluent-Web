@@ -33,7 +33,7 @@ class Lecture extends Component {
                 <img className="lesson-title-img" src={ask} alt="Getting to Know"/>
                 <h1>Getting to Know</h1>
 
-                <p>Learning start from today, learning start from now. Let's explore some lecture and try talk with Cakap.</p>
+                <p>Learning start from today, learning start from now. Let's explore some lecture and try talk with Celathu.</p>
 
             </div>
 

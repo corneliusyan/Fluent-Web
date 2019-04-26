@@ -8,7 +8,7 @@ class Feedback extends Component {
       <div className="main-container" style={{display: 'flex', justifyContent: 'center'}}>
         <NavLink to="/speak">
           <div style={{textAlign: 'center'}}>
-            <img src={feedback} style={{height: 800}} />
+            <img src={feedback} alt="feedback" style={{height: 800}} />
           </div>
         </NavLink>
       </div>

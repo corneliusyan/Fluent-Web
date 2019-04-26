@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import ask from './assets/img/ask.png';
-
-import { withRouter } from 'react-router-dom'
-import logo from './assets/img/logo.png';
+import mic from './assets/img/mic.png';
+import rec from './assets/img/rec-on.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -11,21 +10,6 @@ const recognition = new window.webkitSpeechRecognition()
 recognition.continous = true
 recognition.interimResults = true
 recognition.lang = 'en-US'
-
-class Card extends Component {
-    render(){
-        return(
-            <div className="card-small">
-                <div className="card-small-image-container">
-                    <img src={this.props.imgsrc} className="card-small-image" alt="lecture"/>
-                </div>
-                <div className="card-small-text-container">
-                    <h3>{this.props.header}</h3>
-                </div>
-            </div>
-        );
-    }
-}
 
 class Practice extends Component {
 
@@ -38,6 +22,7 @@ class Practice extends Component {
           time: 0,
           par: '',
           elapsed: 0,
+          record: mic,
         }
         this.toggleListen = this.toggleListen.bind(this)
         this.handleListen = this.handleListen.bind(this)
@@ -59,9 +44,10 @@ class Practice extends Component {
       }
     
       toggleListen() {
+        this.setState({ record: rec});
         this.setState({
           listening: !this.state.listening
-        }, this.handleListen)
+        }, this.handleListen);
       }
 
       handleChange(e){
@@ -111,8 +97,8 @@ class Practice extends Component {
             if (event.results[i].isFinal) finalTranscript += transcript + ' ';
             else interimTranscript += transcript;
           }
-    
-          document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>'
+          document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>';
+          
           //document.getElementById('final').innerHTML = finalTranscript
           this.setState({
             par: finalTranscript,
@@ -154,7 +140,7 @@ class Practice extends Component {
             <div className="sidebar-container">
                 <img className="lesson-title-img" src={ask} alt="Getting to Know"/>
                 <h1>Practice</h1>
-                .<p>Do you have text and you want to practice speaking using it? Don't worry, Cakap can help you.</p>
+                <p>Do you have text and you want to practice speaking using it? Don't worry, Celathu can help you.</p>
             </div>
 
         </div>
@@ -164,7 +150,7 @@ class Practice extends Component {
                 
                 <div className="textarea-card">
                     <div style={buttonContainer}>
-                        <img src={logo} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen}/>
+                      <img src={this.state.record} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
                     </div>
                     <textarea rows="4" cols="95" placeholder="Input your text here." onChange={this.handleChange.bind(this)}>
                     </textarea>
@@ -194,16 +180,15 @@ const styles = {
       borderRadius: '5px',
       width: '800px',
       height: 'auto',
-      backgroundColor: '#ffffff',
+      backgroundColor: '#e8f0f0',
       marginBlockEnd: '30px',
       display: 'block',
-      padding: '10px 5px'
+      padding: '10px 20px'
     },
     button: {
       left: '45%',
       top: '10%',
-      width: '80px',
-      height: '80px',
+      width: '70px',
       position: 'relative'
     },
     buttonContainer: {

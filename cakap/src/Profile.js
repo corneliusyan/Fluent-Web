@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import girl from './assets/img/girl.png';
+//import girl from './assets/img/girl.png';
+import man from './assets/img/man.png';
 import crown from './assets/img/crown.png';
 import trophy from './assets/img/trophy.png';
 import heart from './assets/img/heart.png';
@@ -24,7 +25,7 @@ class ToggleBox extends Component {
 
   toggleBox() {
     this.setState(oldState => ({ isOpened: !oldState.isOpened }));
-    if (this.state.arrows == rightArrow){
+    if (this.state.arrows === rightArrow){
       this.setState({ arrows: downArrow });
     }else{
       this.setState({ arrows: rightArrow });
@@ -52,7 +53,7 @@ class Collapse extends Component {
   render(){
     var blockStyle = {
       display:'flex',
-      backgroundColor: 'white',
+      backgroundColor: '#e8f0f0',
       color: 'black',
       width: 700,
     };
@@ -63,7 +64,7 @@ class Collapse extends Component {
     };
 
     var circleStyle = {
-      background: '#6a68fa',
+      background: '#7b72a9',
       width: 40,
       height: 40,
       borderRadius: 20,
@@ -71,11 +72,11 @@ class Collapse extends Component {
     return(
       <div className="profile-box" style={blockStyle}>
         <div style={{flex:'9', display:'flex'}}>
-          <div style={{flex: 1}}><div style={circleStyle}><img style={imgStyle} src={this.props.imgsrc} /></div></div>
+          <div style={{flex: 1}}><div style={circleStyle}><img alt="icon-profile" style={imgStyle} src={this.props.imgsrc} /></div></div>
           <h4 style={{flex: 6, marginTop: 12}}>{this.props.text}</h4>
         </div>
         <div style={{flex:'1'}}>
-          <img style={imgStyle} src={this.props.arrow} />
+          <img alt="arrow" style={imgStyle} src={this.props.arrow} />
         </div>
       </div>
     );
@@ -85,7 +86,7 @@ class Collapse extends Component {
 class Child extends Component {
   render(){
     var blockStyle = {
-      backgroundColor: '#f8f8f8',
+      backgroundColor: '#f1f1f1',
       color: 'black',
       width: 685,
       paddingLeft: 15,
@@ -127,13 +128,13 @@ class Profile extends Component {
       <div className="main-container">
         <div className="sidebar">
             <div className="sidebar-container">
-                <h1 style={{paddingBottom: 20}}>Rachel Adriana</h1>
-                <img style={{paddingBottom: 20, width: 170}} src={girl}/>
+                <h1 style={{paddingBottom: 20}}>Carl Cadbury</h1>
+                <img alt="boy" style={{paddingBottom: 20, width: 170}} src={man}/>
                 <h3 style={{paddingBottom: 20}}>390.230 Points</h3>
                 <div style={achievementStyle}>
-                  <img style={{width: 50}} src={crown} />
-                  <img style={{width: 50}} src={trophy} />
-                  <img style={{width: 50}} src={start} />
+                  <img alt="crown" style={{width: 50}} src={crown} />
+                  <img alt="trophy" style={{width: 50}} src={trophy} />
+                  <img alt="newcomer" style={{width: 50}} src={start} />
                 </div>
 
             </div>
@@ -159,9 +160,8 @@ class Profile extends Component {
                 <ToggleBox title="Edit Login Details" colsrc={unlocked}>
                   <Child text="Name"/>
                   <Child text="Photo"/>
-                </ToggleBox>
-                <ToggleBox title="Update Interests" colsrc={tick}>
-                  <Child text="Mathematic"/>
+                  <Child text="Email"/>
+                  <Child text="Password"/>
                 </ToggleBox>
                 <ToggleBox title="Blocked Users" colsrc={blocked}>
                   <Child text="Elsie"/>

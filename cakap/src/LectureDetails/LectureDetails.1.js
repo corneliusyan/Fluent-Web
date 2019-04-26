@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { withRouter } from 'react-router-dom'
-import logo from '../assets/img/logo.png';
+import mic from '../assets/img/mic.png';
+import rec from '../assets/img/rec-on.png';
 
 //------------------------SPEECH RECOGNITION-----------------------------
 
@@ -23,6 +24,7 @@ class LectureDetails extends Component {
       time: 3,
       par: '',
       elapsed: 0,
+      record: mic,
     }
     this.toggleListen = this.toggleListen.bind(this)
     this.handleListen = this.handleListen.bind(this)
@@ -44,6 +46,7 @@ class LectureDetails extends Component {
   }
 
   toggleListen() {
+    this.setState({ record: rec});
     this.setState({
       listening: !this.state.listening
     }, this.handleListen)
@@ -143,7 +146,7 @@ class LectureDetails extends Component {
                     
                     <div style={container}>
                         <div style={buttonContainer}>
-                            <img src={logo} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen}/>
+                            <img src={this.state.record} alt="Lesson 1" id='microphone-btn' style={button} onClick={this.toggleListen} class="pointer"/>
                         </div>
 
                         <div style={textContainer}>
@@ -152,7 +155,7 @@ class LectureDetails extends Component {
                     </div>
 
                     <div style={container}>
-                        <div id='interim' style={interim}>
+                        <div id="interim" style={interimStyle}>
                         </div>
                     </div>
 
@@ -176,7 +179,7 @@ const styles = {
     borderRadius: '5px',
     width: '800px',
     height: 'auto',
-    backgroundColor: '#ffffff',
+    backgroundColor: '#e8f0f0',
     marginBlockEnd: '30px',
     display: 'block',
     padding: '10px 5px'
@@ -199,7 +202,7 @@ const styles = {
     margin: '5px 30px',
     textAlign: 'justify'
   },
-  interim: {
+  interimStyle: {
     color: 'gray',
     border: '#ccc 1px solid',
     borderRadius: '5px',
@@ -209,4 +212,4 @@ const styles = {
   }
 }
 
-const { container, button, buttonContainer, paragraph, textContainer, interim } = styles
+const { container, button, buttonContainer, paragraph, textContainer, interimStyle } = styles

@@ -32,13 +32,14 @@ class Card extends Component{
       margin: 10,
       lineHeight: 1.8,
       flex: 1,
+      color: '#000000',
     }
 
     return(
       <NavLink to="/call">
         <div className="card-small" style={cardStyle}>
           <div style={{flex: 1}}></div>
-          <img style={imgStyle} src={this.props.imgsource}/>
+          <img style={imgStyle} alt="img-speak" src={this.props.imgsource}/>
           <div style={{flex: 1}}></div>
           <h3 style={textStyle}>{this.props.header}</h3>
         </div>
@@ -53,8 +54,8 @@ class Speak extends Component {
       <div className="main-container">
         <div className="sidebar">
             <div className="sidebar-container">
-                <h1>Speak</h1>
                 <div style={{marginLeft: -25}}><Card bgcolor ="#FFF" imgsource={free} header="Free Talking" /></div>
+                <h1>Speak</h1>
                 <p>Talking with stranger and polish your speaking skill. What do you waiting for? Choose your topic!</p>
             </div>
         </div>
