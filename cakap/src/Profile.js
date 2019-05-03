@@ -128,7 +128,7 @@ class Profile extends Component {
       <div className="main-container">
         <div className="sidebar">
             <div className="sidebar-container">
-                <h1 style={{paddingBottom: 20}}>Carl Cadbury</h1>
+                <h1 style={{paddingBottom: 20}}>Cornelius Yan</h1>
                 <img alt="boy" style={{paddingBottom: 20, width: 170}} src={man}/>
                 <h3 style={{paddingBottom: 20}}>390.230 Points</h3>
                 <div style={achievementStyle}>
@@ -155,6 +155,7 @@ class Profile extends Component {
                   <Child text="High Achiever"/>
                   <Child text="New Comer"/>
                 </ToggleBox>
+                <button className="create-button">Create New Class</button>
               </Box>
               <Box header="Settings">
                 <ToggleBox title="Edit Login Details" colsrc={unlocked}>

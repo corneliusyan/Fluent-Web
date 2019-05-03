@@ -31,9 +31,9 @@ class Lecture extends Component {
             
             <div className="sidebar-container">
                 <img className="lesson-title-img" src={ask} alt="Getting to Know"/>
-                <h1>Getting to Know</h1>
+                <h1>English - Semester 2</h1>
 
-                <p>Learning start from today, learning start from now. Let's explore some lecture and try talk with Celathu.</p>
+                <p>This course focuses on learning sound and letter patterns; developing sight, functional and personal reading vocabulary.</p>
 
             </div>
 

@@ -5,6 +5,8 @@ import {
   HashRouter
 } from "react-router-dom";
 import logo from './assets/img/fluent-logo.png';
+import search from './assets/img/search.png';
+import notification from './assets/img/bell.png';
 
 import Lesson from "./Lesson";
 import Practice from "./Practice";
@@ -37,12 +39,14 @@ class App extends Component {
 
           <div id="navbar">
             <ul className="navbar-ul">
-              <li className="navbar-li"><img src={logo} alt="Celathu" className="logo"/></li>
+              <li className="navbar-li"><img src={logo} alt="Fluent" className="logo"/></li>
               <NavLink to="/"></NavLink>
               <li className="navbar-li"><NavLink to="/lesson">Lesson</NavLink></li>
               <li className="navbar-li"><NavLink to="/practice">Practice</NavLink></li>
               <li className="navbar-li"><NavLink to="/speak">Speak</NavLink></li>
               <li className="navbar-li"><NavLink to="/profile">Profile</NavLink></li>
+              <li className="navbar-ic"><NavLink to="/"><img src={search} alt="search" className="icon"/></NavLink></li>
+              <li className="navbar-ic"><NavLink to="/"><img src={notification} alt="notification" className="icon"/></NavLink></li>
             </ul>
           </div>
           <div className="container">

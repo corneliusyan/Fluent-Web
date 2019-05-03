@@ -176,6 +176,10 @@ html, body, #root, #root>div {
     margin-block-start: 5px;
 }
 
+.icon {
+    height: 22px;
+}
+
 .navbar-li {
     float: left;
     margin-block-end: 5px;
@@ -191,7 +195,27 @@ html, body, #root, #root>div {
     padding: 14px 16px;
     margin-block-end: 5px;
     margin-block-start: 5px;
-    margin-left: 8.4vw;
+    margin-left: 4vw;
+    margin-right: 2vw;
+}
+
+.navbar-ic {
+    float: left;
+    margin-block-end: 5px;
+    margin-block-start: 5px;
+    opacity: 0.4;
+}
+
+.navbar-ic a {
+    font-size: 12px;
+    display: block;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 14px 16px;
+    margin-block-end: 5px;
+    margin-block-start: 5px;
+    margin-left: 1vw;
 }
 
 .navbar-li a:hover {
@@ -200,7 +224,6 @@ html, body, #root, #root>div {
 
 .active{
     color: #3c3c72;
-    font-weight: bold;
 }
 
 /*Card*/
@@ -283,6 +306,20 @@ html, body, #root, #root>div {
 }
 
 /*Button*/
+
+.create-button {
+    font-family: 'Circular Book', Fallback, sans-serif;
+    font-size: 14px;
+    border: 2px solid #8f8ccf;
+    background-color: #f9eeed;
+    color: #7b72a9;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 170px;
+    height: 40px;
+    margin-block-start: 20px;
+    margin-block-end: 20px;
+}
 
 .start-button {
     font-family: 'Circular Book', Fallback, sans-serif;

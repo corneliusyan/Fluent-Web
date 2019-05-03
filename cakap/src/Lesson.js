@@ -22,7 +22,7 @@ class Lesson extends Component {
             <div className="sidebar-container">
             <img className="lesson-title-img" src={lesson} alt="Lesson"/>
                 <h1>Enrolled Classes</h1>
-                <p>“Tell me and I forget. Teach me and I remember. Involve me and I learn.” - Benjamin Franklin. Let's learn to speak English using Celathu!</p>
+                <p>“Tell me and I forget. Teach me and I remember. Involve me and I learn.” - Benjamin Franklin. Let's learn to speak English using Fluent!</p>
             </div>
         </div>
  

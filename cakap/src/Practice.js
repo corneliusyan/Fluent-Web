@@ -140,7 +140,7 @@ class Practice extends Component {
             <div className="sidebar-container">
                 <img className="lesson-title-img" src={ask} alt="Getting to Know"/>
                 <h1>Practice</h1>
-                <p>Do you have text and you want to practice speaking using it? Don't worry, Celathu can help you.</p>
+                <p>Do you have text and you want to practice speaking using it? Don't worry, Fluent can help you.</p>
             </div>
 
         </div>
