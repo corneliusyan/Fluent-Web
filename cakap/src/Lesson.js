@@ -21,21 +21,21 @@ class Lesson extends Component {
         <div className="sidebar">
             <div className="sidebar-container">
             <img className="lesson-title-img" src={lesson} alt="Lesson"/>
-                <h1>Lessons</h1>
+                <h1>Enrolled Classes</h1>
                 <p>“Tell me and I forget. Teach me and I remember. Involve me and I learn.” - Benjamin Franklin. Let's learn to speak English using Celathu!</p>
             </div>
         </div>
-
+ 
         <div className="main-column">
             <div className="main-col-container">
                 <div className="card focused">
                     <div className="card-text-container">
-                        <h1>Introduction</h1>
-                        <p>Welcome to the Introduction lesson! Here, you will get the basic lectures from Celathu. I'm sure you can do it easily!</p>
+                        <h1>English - Semester 2</h1>
+                        <p>This course focuses on learning sound and letter patterns; developing sight, functional and personal reading vocabulary.</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>
-                            <p className="curr-participants"><b>5.8k people currently working on this</b></p>
+                            <p className="curr-participants"><b>SMAN 3 Yogyakarta</b></p>
                         </div>
                     </div>
 
@@ -49,12 +49,12 @@ class Lesson extends Component {
 
                 <div className="card">
                     <div className="card-text-container">
-                        <h1>Amazing Quote</h1>
-                        <p>"Education is the most powerful weapon which you can use to change the world." - Nelson Mandela  . Wow, such a beautiful quote. Let’s read some more amazing quotes!</p>
+                        <h1>IENG07 Intermediate English/Trades Course</h1>
+                        <p>This course focuses on developing communication skills required for entry into Carpentry, Horticulture, Automotive Mechanic, Heavy Duty Mechanic, Plumbing, Gas-Fitting, Sheet Metal, Aircraft Sheet Metal and Welding Trades programs.</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>
-                            <p className="curr-participants"><b>5.8k people currently working on this</b></p>
+                            <p className="curr-participants"><b>English First</b></p>
                         </div>
                     </div>
 
@@ -68,12 +68,12 @@ class Lesson extends Component {
 
                 <div className="card">
                     <div className="card-text-container">
-                        <h1>Great Holiday</h1>
-                        <p>Hi! Long time no see. How is your holiday? Is it great? Don't worry, Celathu will give you great holiday experince.</p>
+                        <h1>FENG03 Fundamental English Course</h1>
+                        <p>This course focuses on expanding vocabulary and developing reading fluency; building context and phonic skills; giving oral opinions and writing sentence answers about reading;</p>
                         <div className="lesson-info">
                             <p className="lectures"><b>4 Lectures</b></p>
                             <p className="dot-info"><b>•</b></p>
-                            <p className="curr-participants"><b>5.8k people currently working on this</b></p>
+                            <p className="curr-participants"><b>The British Institute</b></p>
                         </div>
                     </div>
 
