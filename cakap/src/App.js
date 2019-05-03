@@ -4,7 +4,7 @@ import {
   NavLink,
   HashRouter
 } from "react-router-dom";
-import logo from './assets/img/logo.png';
+import logo from './assets/img/fluent-logo.png';
 
 import Lesson from "./Lesson";
 import Practice from "./Practice";
@@ -33,7 +33,7 @@ class App extends Component {
 
     return (
       <HashRouter>
-        <div>
+        <div className="container">
 
           <div id="navbar">
             <ul className="navbar-ul">
@@ -45,7 +45,7 @@ class App extends Component {
               <li className="navbar-li"><NavLink to="/profile">Profile</NavLink></li>
             </ul>
           </div>
-          <div>
+          <div className="container">
             <Route exact path="/" component={Lesson}/>
             <Route path="/lesson" component={Lesson}/>
 

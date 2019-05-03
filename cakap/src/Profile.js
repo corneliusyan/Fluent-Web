@@ -53,7 +53,7 @@ class Collapse extends Component {
   render(){
     var blockStyle = {
       display:'flex',
-      backgroundColor: '#e8f0f0',
+      backgroundColor: '#f9eeed',
       color: 'black',
       width: 700,
     };

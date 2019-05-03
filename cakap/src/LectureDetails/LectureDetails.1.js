@@ -179,7 +179,7 @@ const styles = {
     borderRadius: '5px',
     width: '800px',
     height: 'auto',
-    backgroundColor: '#e8f0f0',
+    backgroundColor: '#f9eeed',
     marginBlockEnd: '30px',
     display: 'block',
     padding: '10px 5px'

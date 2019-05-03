@@ -15,14 +15,14 @@
 
 h1, h2, h3 {
     font-family: 'Circular', Fallback, sans-serif;
-    color: #90aadf;
+    color: #3c3c72;
     margin-block-start: 5px;
     margin-block-end: 5px;
 }
 
 h4, h5 {
     font-family: 'Circular', Fallback, sans-serif;
-    color: #7b72a9;
+    color: #8f8ccf;
     margin-block-start: 5px;
     margin-block-end: 5px;
 }
@@ -30,7 +30,7 @@ h4, h5 {
 p, textarea {
     font-family: 'Circular Book', Fallback, sans-serif;
     font-size: 14px;
-    color: #7b72a9;
+    color: #8f8ccf;
     margin-block-start: 10px;
     margin-block-end: 0px;
     line-height: 2.3;
@@ -56,20 +56,29 @@ html, body {
     height: 100%;
     width: 100%;
     background-color: #f8f8f8;
+    background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
 }
 
 .main-container {
     display: inline-flex;
     width: 100%;
+    height: 100%;
     min-height: 100%;
 }
 
 .main-column {
-    background-color: #f8f8f8;
     margin-left: 35%;
+    min-height: 90%;
     width: 50%;
     padding-right: 15%;
     margin-block-start: 64px;
+    background-color: #fcebea;
+    background-attachment: fixed;
 }
 
 .main-column-call {
@@ -93,7 +102,7 @@ html, body {
 /* Sidebar */
 
 .sidebar {
-    background-color: #f1f1f1;
+    background-color: #eecfcd;
     width: 20%;
     height: 100%;
     padding-left: 15%;
@@ -145,7 +154,7 @@ html, body {
 
 #navbar {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
-    background-color: #e8f0f0;
+    background-color: #f4cfcd;
     position: fixed; /* Set the navbar to fixed position */
     z-index: 2;
     top: 0; /* Position the navbar at the top of the page */
@@ -162,10 +171,9 @@ html, body {
 }
 
 .logo {
-    height: 70px;
+    height: 40px;
     margin-block-end: 5px;
     margin-block-start: 5px;
-    margin: -10px;
 }
 
 .navbar-li {
@@ -187,11 +195,11 @@ html, body {
 }
 
 .navbar-li a:hover {
-    color: #90aadf;
+    color: #3c3c72;
 }
 
 .active{
-    color: #90aadf;
+    color: #3c3c72;
     font-weight: bold;
 }
 
@@ -203,7 +211,7 @@ html, body {
     border-radius: 5px; /* 5px rounded corners */
     width: 800px;
     height: auto;
-    background-color: #e8f0f0;
+    background-color: #f9eeed;
     margin-block-end: 30px;
     display: inline-flex;
 }
@@ -279,8 +287,8 @@ html, body {
 .start-button {
     font-family: 'Circular Book', Fallback, sans-serif;
     font-size: 14px;
-    border: 2px solid #7b72a9;
-    background-color: #e8f0f0;
+    border: 2px solid #3c3c72;
+    background-color: #f9eeed;
     color: #7b72a9;
     cursor: pointer;
     border-radius: 5px;
@@ -310,7 +318,7 @@ html, body {
     border-radius: 5px; /* 5px rounded corners */
     width: 320px;
     height: 350px;
-    background-color: #e8f0f0;
+    background-color: #f9eeed;
     margin: 30px;
     display: block;
 }
@@ -404,7 +412,7 @@ html, body {
     border-radius: 5px; /* 5px rounded corners */
     width: 800px;
     height: auto;
-    background-color: #e8f0f0;
+    background-color: #f9eeed;
     margin-block-end: 30px;
     display: block;
     padding: 20px;
