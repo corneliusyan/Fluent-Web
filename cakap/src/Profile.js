@@ -128,7 +128,7 @@ class Profile extends Component {
       <div className="main-container">
         <div className="sidebar">
             <div className="sidebar-container">
-                <h1 style={{paddingBottom: 20}}>Cornelius Yan</h1>
+                <h1 style={{paddingBottom: 20}}>Cadbury Carl</h1>
                 <img alt="boy" style={{paddingBottom: 20, width: 170}} src={man}/>
                 <h3 style={{paddingBottom: 20}}>390.230 Points</h3>
                 <div style={achievementStyle}>
