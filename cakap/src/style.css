@@ -91,6 +91,11 @@ html, body, #root, #root>div {
     margin: 30px;
 }
 
+.main-col-container-practice {
+    width: 50%;
+    margin: 30px;
+}
+
 .row-container {
     display: inline-flex;
     width: 100%;

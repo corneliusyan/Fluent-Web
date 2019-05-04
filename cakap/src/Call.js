@@ -45,7 +45,7 @@ class Call extends Component {
     return (
       <div className="main-container">
         <div className="sidebar">
-            <div className="sidebar-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 120}}>
+            <div className="sidebar-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 130}}>
                 <h1>Cadbury Carl</h1>
                 <img style={{width: 170, paddingTop: 10}} alt="boy" src={man}/>
                 <p>Enjoy your conversation!</p>
@@ -56,7 +56,7 @@ class Call extends Component {
           <source src={sound} type="audio/mp3" autoPlay />
         </audio>    */}
         <div className="main-column main-column-call" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column'}}>
-          <div className="main-col-container" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: 150}}>
+          <div className="main-col-container-practice" style={{display: 'flex', justifyContent: 'center', flexDirection: 'column', paddingTop: -20}}>
             <div style={{textAlign: 'center'}}><h1>Calling</h1></div>
             <NavLink to="/feedback">
               <div style={{textAlign: 'center'}}>
