@@ -1,9 +1,9 @@
 {
   "short_name": "Fluent App",
-  "name": "Fluent App for FIT Competition 2019",
+  "name": "Fluent App for Compfest Competition 2019",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "fluent-logo.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }

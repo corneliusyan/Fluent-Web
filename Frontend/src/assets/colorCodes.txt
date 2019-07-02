@@ -1,0 +1,8 @@
+dark pink       #f4cfcd
+light pink      #fcebea
+lighter pink    #f9eeed
+
+dark purple     #3c3c72
+light purple    #8f8ccf
+
+dark gray       #acacac

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import signin from './assets/img/signin.jpg';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class TextInput extends Component {
   constructor(props) {
@@ -72,7 +73,9 @@ class Login extends Component {
           <h1>Sign In</h1>
           <h5>Welcome Back!</h5>
           <h5>Ready to improve your speaking skill?</h5>
-          <TextInput email="email" pass="pass" />
+          <Link to="/">
+            <TextInput email="email" pass="pass" />
+          </Link>
         </div>
       </section>
     );
