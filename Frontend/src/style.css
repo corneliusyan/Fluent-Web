@@ -519,3 +519,101 @@ html, body, #root, #root>div {
 .pointer{
     cursor: pointer;
 }
+
+/* Dashboard */
+
+/* Home */
+
+.sectionStyle {
+    margin: 0;
+    height: auto;
+    width: 100vw;
+}
+.home {
+    background-color: #F7E2E1;
+    height: 100vh;
+}
+.logoStyle {
+    height: 3em;
+}
+.menu {
+    display:flex;
+    position: absolute;
+    top: 0;
+    justify-content: space-around;
+    padding: 1em 0;
+    align-items: center;
+}
+.signin-button {
+    padding: 0.1em 2em;
+    border-radius: 10px;
+    border: 2px solid #3c3c72;
+}
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stripe {
+    width: 15px;
+    height: auto;
+    background-color: #3c3c72;
+}
+.content > div{
+    flex: 1;
+}
+.title {
+    display: flex;
+    padding-left: 10vw;
+}
+.content img {
+    width: 100%;
+}
+.join-button {
+    background-color: #b1aad4;
+    padding: 0 2em;
+    border-radius: 2em;
+    display: inline-block;
+}
+.home p {
+    margin: 0;
+    font-weight: bold;
+    color: #3c3c72;
+}
+.join-button p {
+    font-size: 1.5em;
+}
+.content-stripe {
+    padding: 1em;
+    max-width: 630px;
+}
+.home h1 {
+    font-size: 5em;
+}
+@media only screen and (max-width: 1400px) {
+    .home h1 {
+        font-size: 4.5em;
+    }
+    .title {
+        padding-left: 8vw; 
+    }
+}
+@media only screen and (max-width: 750px) {
+    div.image-container {
+        flex: 0;
+    }
+    .title {
+        padding-left: 10vw; 
+    }
+    .home h1 {
+        font-size: 4.5em;
+    }
+    .content-stripe {
+        max-width: 550px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .home h1 {
+        font-size: 4em;
+    }
+}
