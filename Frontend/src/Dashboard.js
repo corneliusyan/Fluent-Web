@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import logo from './assets/img/fluent-logo.png';
 import homeImg from './assets/img/home.png';
-import lesson from './assets/img/lesson-mockup.png';
-import practice from './assets/img/practice-mockup.png';
-import speak from './assets/img/speak-mockup.png';
+import lesson from './assets/img/mockup/lesson-mockup.png';
+import practice from './assets/img/mockup/practice-mockup.png';
+import speak from './assets/img/mockup/speak-mockup.png';
+import simple from './assets/img/value/simple.svg';
+import standard from './assets/img/value/standard.svg';
+import direct from './assets/img/value/direct.svg';
+import objective from './assets/img/value/objective.svg';
+
 class Dashboard extends Component {  
   render() {
     return (
@@ -90,6 +95,52 @@ class Dashboard extends Component {
                     <i class="fa fa-angle-double-right"></i>
                   </p>
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="value sectionStyle center">
+          <div className="value-wrapper center">
+            <div>
+              <img src={simple} />
+              <div>
+                <h2>Simple</h2>
+                <p>
+                  Aplikasi menggunakan UI yang sederhana. Dengan menerapkan 3x Click System
+                  Rule yaitu hanya diperlukan maksimum 3x klik untuk mengakses fitur pada
+                  aplikasi.
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={direct} />
+              <div>
+                <h2>Direct Communication Learning</h2>
+                <p>
+                  Fluent memfasilitasi penggunanya untuk belajar bahasa Inggris melalui
+                  komunikasi secara langsung dengan menggunakan Matchmaking System dengan
+                  pengguna lain secara acak.
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={objective} />
+              <div>
+                <h2>Objective Evaluation</h2>
+                <p>
+                  Fluent meningkatkan kemampuan verbal penggunanya dengan memberikan
+                  penilaian objektif sebagai bahan evaluasi penggunanya.
+                </p>
+              </div>
+            </div>
+            <div>
+              <img src={standard} />
+              <div>
+                <h2>Standardized Curriculum</h2>
+                <p>
+                  Fluent menyediakan kurikulum belajar yang komprehensif, terstandarisasi dan
+                  tersertifikasi.
+                </p>
               </div>
             </div>
           </div>

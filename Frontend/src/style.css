@@ -636,7 +636,7 @@ html, body, #root, #root>div {
 
 .feature {
     background-color: #f9eeed;
-    padding: 7em 0;
+    padding: 7em 0 4.5em 0;
 }
 .feature img {
     height: 480px;
@@ -727,5 +727,51 @@ html, body, #root, #root>div {
 @media only screen and (max-width: 370px) {
     .feature-box, .right .feature-box {
         width: 200px;
+    }
+}
+
+/* Value */
+.value img {
+    width: 180px;
+    margin-right: 2em;
+}
+.value {
+    background-color: #f9eeed;
+}
+.value-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1100px;
+}
+.value-wrapper > div {
+    flex: 1;
+    display: flex;
+    padding: 1em;
+    min-width: 470px;
+    max-width: 550px;
+}
+.value p {
+    line-height: 1.5;
+}
+@media only screen and (max-width: 700px) {
+    .value img {
+        width: 100px;
+    }
+    .value-wrapper > div {
+        max-width: 400px;
+    }
+}
+@media only screen and (max-width: 530px) {
+    .value-wrapper, .value-wrapper > div {
+        flex-direction: column;
+    }
+    .value-wrapper > div {
+        min-width: auto;
+        max-width: 350px;
+        margin: 1em;
+    }
+    .value img {
+        width: 120px;
+        margin-bottom: 1em;
     }
 }
