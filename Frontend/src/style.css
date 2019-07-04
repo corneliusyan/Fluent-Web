@@ -522,12 +522,21 @@ html, body, #root, #root>div {
 
 /* Dashboard */
 
+.dashboard h1 {
+    font-size: 3em;
+}
+
+@media only screen and (max-width: 670px) {
+    .dashboard h1 {
+        font-size: 2em;
+    }
+}
 /* Home */
 
 .sectionStyle {
     margin: 0;
     height: auto;
-    width: 100vw;
+    width: 100%;
 }
 .home {
     background-color: #F7E2E1;
@@ -615,5 +624,108 @@ html, body, #root, #root>div {
 @media only screen and (max-width: 600px) {
     .home h1 {
         font-size: 4em;
+    }
+}
+@media only screen and (max-width: 400px) {
+    .home h1 {
+        font-size: 3.5em;
+    }
+}
+
+/* Feature */
+
+.feature {
+    background-color: #f9eeed;
+    padding: 7em 0;
+}
+.feature img {
+    height: 480px;
+    width: auto;
+    margin: -8em -5em;
+    z-index: 4;
+}
+.feature.center {
+    flex-direction: column;
+}
+.feature-content {
+    padding-top: 6em;
+}
+.feature-content > div {
+    display: flex;
+    padding: 4em 0;
+}
+.feature-box {
+    border: 10px solid #F7E2E1;
+    width: 410px;
+    padding: 1em 1em 1em 5em;
+    align-items: normal;
+    flex-direction: column;
+}
+.feature-box i {
+    margin-left: 5px;
+}
+.feature-box a {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.feature-box a p {
+    color: #acacac;
+}
+.right .feature-box {
+    padding: 1em 5em 1em 1em;
+    text-align: right;
+}
+@media only screen and (max-width: 840px) {
+    .feature img {
+        height: 380px;
+        margin: -5em -6em;
+    }
+    .feature-box {
+        width: 300px;
+        padding: 0 1em 0 5em;
+    }
+    .feature-box p {
+        line-height: 1.5;
+    }
+    .feature-content > div {
+        padding: 3em 0;
+    }
+}
+@media only screen and (max-width: 670px) {
+    .feature-content > div {
+        flex-direction: column;
+        padding: 1em 0;
+        align-items: center;
+    }
+    .feature-content div.right {
+        flex-direction: column-reverse;
+    }
+    .feature img {
+        height: 480px;
+        width: 300px;
+        margin: 0;
+    }
+    .feature-content {
+        padding: 0;
+    }
+    .feature-box, .right .feature-box {
+        padding: 1em 2em;
+        text-align: left;
+    }
+}
+@media only screen and (max-width: 430px) {
+    .feature img {
+        height: 380px;
+        width: 237px;
+    }
+    .feature-box, .right .feature-box {
+        padding: 0.7em 1.5em;
+        width: 250px;
+    }
+}
+@media only screen and (max-width: 370px) {
+    .feature-box, .right .feature-box {
+        width: 200px;
     }
 }
