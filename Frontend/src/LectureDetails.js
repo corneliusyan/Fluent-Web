@@ -61,7 +61,7 @@ class LectureDetails extends Component {
         else interimTranscript += transcript;
       }
       document.getElementById('spoken').innerHTML = interimTranscript
-      //document.getElementById('final').innerHTML = finalTranscript
+      document.getElementById('final').innerHTML = finalTranscript
 
     //-------------------------COMMANDS------------------------------------
 
@@ -74,7 +74,7 @@ class LectureDetails extends Component {
         recognition.onend = () => {
           console.log('Stopped listening per command')
           const finalText = transcriptArr.slice(0, -3).join(' ')
-          //document.getElementById('final').innerHTML = finalText
+          document.getElementById('final').innerHTML = finalText
         }
       }
     }
@@ -119,6 +119,12 @@ class LectureDetails extends Component {
                     <div style={container}>
                         <div id='interim' style={interim}>
                             <p id='spoken' style={spoken}></p>
+                        </div>
+                    </div>
+
+                    <div style={container}>
+                        <div id='interim' style={interim}>
+                            <p id='final' style={spoken}></p>
                         </div>
                     </div>
 

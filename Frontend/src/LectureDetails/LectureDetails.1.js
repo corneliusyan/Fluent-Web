@@ -92,7 +92,7 @@ class LectureDetails extends Component {
       }
 
       document.getElementById('interim').innerHTML = '<p>' + interimTranscript + '</p>'
-      //document.getElementById('final').innerHTML = finalTranscript
+      document.getElementById('final').innerHTML = finalTranscript
       this.setState({
         par: finalTranscript,
       })
@@ -109,7 +109,7 @@ class LectureDetails extends Component {
           console.log('Stopped listening per command')
           const finalText = transcriptArr.slice(0, -3).join(' ')
           console.log("Finaltext" + finalText)
-          //document.getElementById('final').innerHTML = finalText
+          document.getElementById('final').innerHTML = finalText
           this.setState({
             par: finalText,
           })
@@ -156,6 +156,11 @@ class LectureDetails extends Component {
 
                     <div style={container}>
                         <div id="interim" style={interimStyle}>
+                        </div>
+                    </div>
+
+                    <div style={container}>
+                        <div id="final" style={interimStyle}>
                         </div>
                     </div>
 

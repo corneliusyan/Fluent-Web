@@ -24,17 +24,19 @@ class Analyze extends Component {
 
         const script = document.createElement("script");
 
-
+        var err = false
         this.data = this.props.location.state
-        window.source_text = this.data.text
-        let payload = {
-            source_text: this.data.text,
-            input_text: this.data.par,
-            input_time: this.data.elapsed,
-            expected_time: this.data.time
-        }
-        const self = this
-        axios.post(API_ANALYZE_URL, payload)
+        
+        try {
+            window.source_text = this.data.text
+            let payload = {
+                source_text: this.data.text,
+                input_text: this.data.par,
+                input_time: this.data.elapsed,
+                expected_time: this.data.time
+            }
+            const self = this
+            axios.post(API_ANALYZE_URL, payload)
             .then(function (response) {
                 console.log(response.data);
                 window.score = response.data.clarity * 100;
@@ -44,9 +46,9 @@ class Analyze extends Component {
                 } else {
                     window.score_text = "Your clarity in speaking is low. You need to convey your messages clearly. Keep practicing!"
                 }
-
+    
                 // this.pacing = Math.floor((Number(this.props.location.state.time) / Number(this.props.location.state.elapsed)) * 100);
-
+    
                 if (window.pacing > 100) {
                     window.pacing_text = "You need to speak slower. It appears that your pacing is too fast. It can hurt your messages and overall performance. Keep practicing!"
                 } else if (window.pacing <= 100 && window.pacing >= 70) {
@@ -54,7 +56,7 @@ class Analyze extends Component {
                 } else {
                     window.pacing_text = "You need to speak faster. It appears that your pacing is too slow. It can hurt your messages and overall performance. Keep practicing!"
                 }
-
+    
                 self.setState({
                     score: window.score,
                     score_text: window.score_text,
@@ -67,6 +69,15 @@ class Analyze extends Component {
             .catch(function (error) {
                 console.log(error);
             });
+        } catch(e) {
+            err = true
+        }
+
+        if (err) {
+            this.message = "You haven't recorded anything. Try choosing a lecture and start practicing!"
+        } else {
+            this.message = "Keep going! You're doing great! Here's your result details."
+        }
 
     }
 
@@ -121,7 +132,7 @@ class Analyze extends Component {
                     <div className="sidebar-container">
                         <h1>Result</h1>
 
-                        <p>Keep going! You're doing great! Here's your result details.</p>
+                        <p>{this.message}</p>
 
                     </div>
 
