@@ -8,7 +8,7 @@ import SpeakerBlue from './assets/img/speaker-blue.png';
 const Diff = require('diff');
 const difflib = require('difflib');
 
-const API_BASE_URL = 'http://localhost:8000'
+const API_BASE_URL = 'http://165.22.105.219:8001'
 const API_ANALYZE_URL = API_BASE_URL + '/analyze/'
 
 var source_text;
