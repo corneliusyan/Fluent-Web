@@ -584,7 +584,7 @@ html, body, #root, #root>div {
     border-radius: 2em;
     display: inline-block;
 }
-.home p {
+.signin-button p, .join-button p {
     margin: 0;
     font-weight: bold;
     color: #3c3c72;
@@ -834,5 +834,44 @@ html, body, #root, #root>div {
     }
     .tech-content > div {
         margin: 0 1em;
+    }
+}
+
+/* Ready */
+
+.ready {
+    background-color: #f4cfcd;
+    padding: 2em 0;
+}
+.ready-wrapper {
+    max-width: 900px;
+    display: flex;
+}
+.ready h1 {
+    font-size: 2.5em;
+}
+.ready-wrapper > div {
+    margin: 0 1em;
+}
+.get {
+    color: #8f8ccf;
+}
+@media only screen and (max-width: 650px) {
+    .ready h1 {
+        font-size: 2em;
+    }
+}
+@media only screen and (max-width: 560px) {
+    .ready-wrapper {
+        flex-direction: column;
+    }
+    .ready-wrapper .center {
+        justify-content: flex-start;
+        margin-top: 1em;
+    }
+}
+@media only screen and (max-width: 390px) {
+    .ready h1 {
+        font-size: 1.5em;
     }
 }

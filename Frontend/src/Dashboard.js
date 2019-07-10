@@ -183,6 +183,21 @@ class Dashboard extends Component {
             </div>
           </div>
         </section>
+        <section className="ready sectionStyle center">
+          <div className="ready-wrapper">
+            <div>
+              <h1>Ready to get started?</h1>
+              <h1 className="get">Get in touch!</h1>
+            </div>
+            <div className="center">
+              <a href="/app">
+                <div className="join-button">
+                  <p>Join Us</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
       </div>
     );
   }
