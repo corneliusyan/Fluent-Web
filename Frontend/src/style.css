@@ -750,7 +750,7 @@ html, body, #root, #root>div {
     min-width: 470px;
     max-width: 550px;
 }
-.value p {
+.value p, .tech p {
     line-height: 1.5;
 }
 @media only screen and (max-width: 700px) {
@@ -773,5 +773,66 @@ html, body, #root, #root>div {
     .value img {
         width: 120px;
         margin-bottom: 1em;
+    }
+}
+
+/* Tech */
+.tech {
+    flex-direction: column;
+    background-color: #F7E2E1;
+    padding-bottom: 2em;
+}
+.tech img {
+    max-height: 450px;
+    max-width: 90vw;
+}
+.tech-content {
+    display: flex;
+    max-width: 1000px;
+}
+.tech-content img {
+    height: 4em;
+    margin: 0 1em;
+}
+.tech-content-left {
+    border-right: 5px solid #f4cfcd;
+}
+.tech-title {
+    display: flex;
+    align-items: flex-start;
+}
+.tech-content > div {
+    flex: 1;
+    padding: 1em;
+    margin-left: 1em;
+}
+@media only screen and (max-width: 780px) {
+    .tech-title {
+        flex-direction: column;
+    }
+    .tech-content img {
+        margin: 0 0 1em 0;
+    }
+}
+@media only screen and (max-width: 585px) {
+    .tech-content {
+        flex-direction: column;
+    }
+    .tech-title {
+        flex-direction: row;
+    }
+    .tech-content > div {
+        margin: 0 2em;
+    }
+    .tech-content-left {
+        border-right: none;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .tech-title {
+        flex-direction: column;
+    }
+    .tech-content > div {
+        margin: 0 1em;
     }
 }

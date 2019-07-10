@@ -8,8 +8,11 @@ import simple from './assets/img/value/simple.svg';
 import standard from './assets/img/value/standard.svg';
 import direct from './assets/img/value/direct.svg';
 import objective from './assets/img/value/objective.svg';
+import data from './assets/img/data.svg';
+import ai from './assets/img/icon/ai.svg';
+import analyst from './assets/img/icon/analyst.svg';
 
-class Dashboard extends Component {  
+class Dashboard extends Component {
   render() {
     return (
       <div className="dashboard">
@@ -58,7 +61,7 @@ class Dashboard extends Component {
                 </p>
                 <a href="/app#/lesson">
                   <p>
-                    Learn More 
+                    Learn More
                     <i class="fa fa-angle-double-right"></i>
                   </p>
                 </a>
@@ -69,12 +72,12 @@ class Dashboard extends Component {
                 <h2>Practice</h2>
                 <p>
                   Prepare for your speech, interview, or anything! Type in the box, and start
-                  recording yourself. Fluent will help you review and improve it with our 
+                  recording yourself. Fluent will help you review and improve it with our
                   cutting edge AI.
                 </p>
                 <a href="/app#/practice">
                   <p>
-                    Learn More 
+                    Learn More
                     <i class="fa fa-angle-double-right"></i>
                   </p>
                 </a>
@@ -91,7 +94,7 @@ class Dashboard extends Component {
                 </p>
                 <a href="/app#/speak">
                   <p>
-                    Learn More 
+                    Learn More
                     <i class="fa fa-angle-double-right"></i>
                   </p>
                 </a>
@@ -140,6 +143,41 @@ class Dashboard extends Component {
                 <p>
                   Fluent menyediakan kurikulum belajar yang komprehensif, terstandarisasi dan
                   tersertifikasi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="tech sectionStyle center">
+          <img src={data} />
+          <div className="tech-content">
+            <div className="tech-content-left">
+              <div className="tech-title">
+                <img src={ai} />
+                <h2>
+                  Artificial Intelligence sebagai Evaluator
+                </h2>
+              </div>
+              <div>
+                <p>
+                  Dengan menggunakan kemampuan Machine Learning dalam hal Speech Recognition dan
+                  Natural Language Processing (NLP) milik Google, menjadikan sistem penilaian
+                  evaluasi yang dimiliki Fluent dapat menjadi sangat presisi.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div className="tech-title">
+                <img src={analyst} />
+                <h2>
+                  Data Analytics sebagai Reviewer
+                </h2>
+              </div>
+              <div>
+                <p>
+                  Digunakan untuk mengetahui tingkat perkembangan kemampuan berbicara bahasa
+                  Inggris pribadi nya danmembandingkan dengan orang-orang lain, apakah ia sudah
+                  cukup baik diantara orang lain atau masih memerlukan latihan lebih banyak.
                 </p>
               </div>
             </div>
